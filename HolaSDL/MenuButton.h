@@ -1,4 +1,3 @@
-#pragma once
 #include "ArkanoidObject.h"
 #include "Vector2D.h"
 

@@ -1,7 +1,5 @@
 #include "MenuButton.h"
-
-
-
+/*
 MenuButton::MenuButton(const ArkanoidObject* pParams) :
 	ArkanoidObject(buttonX, buttonY, buttonW, buttonH, textura)
 {
@@ -35,3 +33,4 @@ void MenuButton::clean()
 {
 	ArkanoidObject::~ArkanoidObject();
 }
+*/
