@@ -1,0 +1,101 @@
+// Arquitectura de herencias
+GameState
+	|--PlayState
+	|--PauseState (MenuState)
+	|--MainMenuState (MenuState)
+	|--EndState (MenuState)
+	
+GameObject
+	|--SDLGameObject
+		|--ArkanoidObject
+		|--Button
+
+Class GameState {
+	protected:
+		list<GameObject*>stage;
+		Game* app;
+	public:
+		virtual (destructor) {
+			for(GameObject* o in stage) { // Hay que hacerlo de la otra forma
+				delete o;
+			}
+		}
+		virtual update() {
+			for(GameObject* o in stage) { // Hay que hacerlo de la otra forma (creo)
+				o->update();
+			}
+		}
+		virtual bool handleEvents(SDLEvent& e) {
+			auto it = stage.begin();
+			while (it != stage.end() && !handled) {
+				if ((*it)->handleEvent(e)) {
+					handled = true;
+				} else {
+					++it;
+				}
+			}
+		}
+}
+
+class PauseState : public GameState {
+	PauseState(...) : {
+		stage.push_back(new Button(game, ..., resume);
+		stage.push_back(new Button(game, ...);
+		...
+	}
+	static void resume(...) {
+		app->getStateMachine()->popState();
+	}
+}
+
+using CallBackOnClick = void(game* app);
+class Button : SDLGameObject {
+	// El ultimo atributo del contructor es un callback*
+	protected:
+		CallbackOnClick* cb;
+		
+	public:
+	bool HandleEvent (SDLEvent& e) {
+		if () {	// RATON IZQUIERDO
+		SDLPoint p = {e.button.x, e.button.y};
+		SDLRect r = {x, y, w, h};
+			if (SDL_PointInRect()&p, &r) {
+				cb(app);
+				handled = true;
+			}
+			return handled;
+		}
+	}
+}
+
+class PlayState {
+	void HandleEvent(...) {
+		if() { // Pulsado escape
+			app->getStateMachine();
+			pushState(new PauseState);
+		} else {
+			// Llamar al handleEvents de todos los objetos que lo necesiten
+			GameState::handleEvent(e);
+		}
+	}
+}
+
+struct Score {
+	string nick;
+	time_t time;
+	int score;
+}
+struct ScoreKey {
+	int score;
+	time_t time;
+}
+using scoresMap = map<ScoreKey, store>
+
+//EN GAME.H
+map<string, Texture*> texture;
+// FORMA 1
+textures.insert(pair <string, Texture*>{'ball', new Texture (...)});
+t = textures.at("ball");
+// FORMA 2 (Mejor)
+textures["ball"] = new Texture(...);
+t = textures["ball"];
