@@ -1,20 +1,21 @@
-#include "ArkanoidObject.h"
+#include "GameObject.h"
+#include "Game.h"
 #include "Vector2D.h"
+#include "Texture.h"
 
-class MenuButton : public ArkanoidObject
+using CallBackOnClick = void(Game* app);
+class MenuButton : public GameObject
 {
-private:
+protected:
+	CallBackOnClick* cb;
 	enum buttonState {mouseOut = 0, mouseOver = 1, isClick = 1};
 	Texture* textura;
 	buttonState mouseCurrentFrame;
-	int buttonX, buttonY, buttonW, buttonH;
 public:
-	MenuButton(const ArkanoidObject* pParams);
-	virtual void render();
-	virtual void update();
-	virtual void clean();
-
-
-	/*ArkanoidObject(int x, int y, int w, int h, Texture* t) :
-		pos(x, y), w(w), h(h), texture(t) {}*/
+	MenuButton();
+	~MenuButton() { limpiar(); }
+	void render();
+	void update();
+	void limpiar();
+	bool HandleEvent(SDL_Event& e);
 };

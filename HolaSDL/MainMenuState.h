@@ -4,14 +4,14 @@
 #include "MenuButton.h"
 
 class GameState;
-class MenuState : public MenuButton
+class MainMenuState : public MenuButton
 {
 private:
 	static const std::string sMenuID;
-	std::vector<ArkanoidObject*> menuGameObjects;
-	Texture* texturaButton = nullptr;
+	//std::vector<ArkanoidObject*> menuGameObjects;
+	//Texture* texturaButton = nullptr;
 public:
-	~MenuState() { limpiar(); }
+	~MainMenuState() { limpiar(); }
 	void limpiar();
 	virtual void update();
 	virtual void render();

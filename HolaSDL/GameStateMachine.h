@@ -2,34 +2,20 @@
 #define GameStateMachineH
 
 #include "GameState.h"
+#include "stack"
 
-class GameState;
 class GameStateMachine
 {
-	private:
-		//list<GameState*> machineGameStates; //como lo haria yo
+	protected:
 		stack<GameState*> stack;
-		std::vector<GameState*> machineGameStates; // como recomienda el libro ese
+		//list<GameState*> machineGameStates; //como lo haria yo
+		//std::vector<GameState*> machineGameStates; // como recomienda el libro ese
 		bool exit;
 	public:
-		void update();
-		void render();
-		void handleEvents();
-
+		void currentState();
 		void pushState(GameState* pState);
 		void changeState(GameState* pState);
 		void popState();
-		//virtual GameState currentState() { return currentState; }
-		/*void popState() {
-			if (stack.empty()) {
-				delete stack.top();
-				stack.pop();
-			}
-		}*/
-		/*void changeStates(GameState s) {
-			popState();
-			pushState(s);
-		}*/
 };
 
 

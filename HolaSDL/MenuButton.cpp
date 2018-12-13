@@ -1,4 +1,20 @@
 #include "MenuButton.h"
+
+bool MenuButton::HandleEvent(SDL_Event& e){
+	/*
+	if () {	// RATON IZQUIERDO
+		SDL_Point p = { e.button.x, e.button.y };
+		SDL_Rect r = { x, y, w, h };
+		if (SDL_PointInRect()&p, &r) {
+			cb(app);
+			handled = true;
+		}
+		return handled;
+	}
+	*/
+	return true;
+}
+
 /*
 MenuButton::MenuButton(const ArkanoidObject* pParams) :
 	ArkanoidObject(buttonX, buttonY, buttonW, buttonH, textura)
@@ -27,10 +43,5 @@ void MenuButton::update()
 	{
 		mouseCurrentFrame = mouseOut;
 	}
-}
-
-void MenuButton::clean()
-{
-	ArkanoidObject::~ArkanoidObject();
 }
 */

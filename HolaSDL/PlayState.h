@@ -9,7 +9,6 @@ class Game;
 class PlayState : public GameState
 {
 private:
-	list<GameObject*> objects;
 	static const std::string sPlayID;
 public:
 	~PlayState() { limpiar(); }
