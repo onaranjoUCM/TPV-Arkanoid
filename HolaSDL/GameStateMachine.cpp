@@ -1,5 +1,17 @@
 #include "GameStateMachine.h"
 
+GameStateMachine::GameStateMachine() {
+
+}
+
+GameStateMachine::~GameStateMachine() {
+
+}
+
+GameState* GameStateMachine::getCurrentState() {
+	return currentState;
+}
+
 void GameStateMachine::pushState(GameState *pState)
 {
 	/*
@@ -10,20 +22,27 @@ void GameStateMachine::pushState(GameState *pState)
 
 void GameStateMachine::popState()
 {
-	/*
 	if (!stack.empty())
 	{
+		delete stack.top();
+		stack.pop();
+		
+		// ESTO NO SE DE DONDE SALE
+		/*
 		if (stack.back()->onExit())
 		{
 			delete stack.back();
 			stack.pop_back();
-		}
+		}*/
 	}
-	*/
 }
 
 void GameStateMachine::changeState(GameState *pState)
 {
+	popState();
+	pushState(pState);
+
+	// ESTO NO SE DE DONDE SALE
 	/*
 	if (!stack.empty())
 	{

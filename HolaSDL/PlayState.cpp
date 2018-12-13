@@ -1,5 +1,5 @@
 #include "PlayState.h"
-#include "Game.h"
+#include "SDLApplication.h"
 #include "checkML.h"
 #include <fstream>
 
@@ -13,7 +13,18 @@ void PlayState::update() {}
 
 void PlayState::render() {}
 
-void PlayState::handleEvents() {}
+void PlayState::handleEvent() {
+	/*
+	if () { // Pulsado escape
+		app->getStateMachine();
+		pushState(new PauseState);
+	}
+	else {
+		// Llamar al handleEvents de todos los objetos que lo necesiten
+		GameState::handleEvent(e);
+	}
+	*/
+}
 
 bool PlayState::onEnter() {
 	std::cout << "entering PlayState\n";

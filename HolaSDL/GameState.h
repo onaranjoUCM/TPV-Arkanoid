@@ -3,19 +3,20 @@
 
 #include "GameObject.h"
 #include "checkML.h"
+#include "SDL.h"
 #include <list>
 
 using namespace std;
 
-class Game;
+class SDLApplication;
 class GameState {
 protected:
 	list<GameObject*> objects;
-	Game* game;
+	SDLApplication* game;
 public:
 	~GameState() {};
-	virtual void update();
-	virtual void render();
-	virtual void handleEvents();
+	void update();
+	void render();
+	bool handleEvents(SDL_Event& e);
 };
 #endif

@@ -1,11 +1,10 @@
 #include "ArkanoidObject.h"
-#include "Game.h"
 #include "checkML.h"
 #include <fstream>
 
 using namespace std;
 
-void ArkanoidObject::loadFromFile(ifstream& file, Game* game) {
+void ArkanoidObject::loadFromFile(ifstream& file, SDLApplication* game) {
 	int x, y, width, height;
 	file >> x >> y >> width >> height;
 	pos = Vector2D(x, y);

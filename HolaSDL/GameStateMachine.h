@@ -1,44 +1,29 @@
-#ifndef GameStateMachineH
-#define GameStateMachineH
-
 #include "GameState.h"
+#include "GameState.h"
+#include "PlayState.h"
+//#include "MainMenuState.h"
+//#include "PauseState.h"
+//#include "EndState.h"
 #include "stack"
 
-class GameStateMachine
-{
+class GameStateMachine {
 	protected:
-		stack<GameState*> stack;
+		GameState* currentState = nullptr;
+		stack<GameState*> stack; // Como pone el enunciado
 		//list<GameState*> machineGameStates; //como lo haria yo
 		//std::vector<GameState*> machineGameStates; // como recomienda el libro ese
-		bool exit;
+
+		PlayState* playState = nullptr;
 	public:
-		void currentState();
+		GameStateMachine();
+		~GameStateMachine();
+
+		GameState* getCurrentState();
 		void pushState(GameState* pState);
 		void changeState(GameState* pState);
 		void popState();
 };
 
-
-#endif // !GameStateMachineH
-
-/*class Game {
-	enum GameState{menu, play, end, pause};
-	private:
-		GameStateMachine stateMachine;
-	Game::game() {
-		stateMachine.pushState(new menu());
-	}
-	void run() {
-		while (!exit) {
-			handleEvents();
-			stateMachine.currentState->update();
-		}
-	}
-	void render() {
-		...renderClear();
-		stateMachine.currentState->render();
-	}
-};*/
 /*class GameStateMachine
 {
 private:

@@ -1,11 +1,11 @@
-#ifndef PlayStateH
+#ifndef PlayStateH;
 #define PlayStateH
 
 #include "GameState.h"
 #include "Vector2D.h"
 #include "Texture.h"
 
-class Game;
+class SDLApplication;
 class PlayState : public GameState
 {
 private:
@@ -14,13 +14,12 @@ public:
 	~PlayState() { limpiar(); }
 	void limpiar();
 
-	virtual void update();
-	virtual void render();
-	virtual void handleEvents();
+	void update();
+	void render();
+	void handleEvent();
 
 	virtual bool onEnter();
 	virtual bool onExit();
-
 	virtual std::string getStateID() const { return sPlayID; }
 };
 

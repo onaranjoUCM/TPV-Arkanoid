@@ -1,25 +1,16 @@
-#pragma once
 #include "GameState.h"
-#include "ArkanoidObject.h"
-#include "MenuButton.h"
+#include "Vector2D.h"
+#include "Texture.h"
 
-class GameState;
-class MainMenuState : public MenuButton
-{
-private:
-	static const std::string sMenuID;
-	//std::vector<ArkanoidObject*> menuGameObjects;
-	//Texture* texturaButton = nullptr;
+class MainMenuState : public GameState {
+protected:
+	
 public:
+	MainMenuState() {};
 	~MainMenuState() { limpiar(); }
 	void limpiar();
-	virtual void update();
-	virtual void render();
-	virtual void handleEvents();
 
-	virtual bool onEnter();
-	virtual bool onExit();
-
-	virtual std::string getStateID() const { return sMenuID; }
+	void update() {};
+	void render() {};
+	void handleEvent() {};
 };
-
