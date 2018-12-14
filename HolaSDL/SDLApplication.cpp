@@ -3,6 +3,7 @@
 #include "checkML.h"
 
 SDLApplication::SDLApplication() {
+	cout << "Cargado SDLApplication" << endl;
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("Arkanoid", SDL_WINDOWPOS_CENTERED,
@@ -43,13 +44,17 @@ void SDLApplication::render() {
 }
 
 void SDLApplication::handleEvents() {
-	/*
-	while (event) {
-		if (SDL_EventType == SDL_QUIT) {
+	SDL_Event e;
+	while (SDL_PollEvent(&e) && !exit) {
+		if (e.type == SDL_QUIT) {
 			exit = true;
-		} else {
-			stateMachine->getCurrentState.handleEvents(e);
+		}
+		else {
+			stateMachine->getCurrentState()->handleEvents(e);
 		}
 	}
-	*/
+}
+
+GameStateMachine* SDLApplication::getStateMachine() {
+	return stateMachine;
 }

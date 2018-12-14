@@ -1,16 +1,17 @@
+#ifndef MainMenuStateH;
+#define MainMenuStateH
+
 #include "GameState.h"
-#include "Vector2D.h"
-#include "Texture.h"
+//#include "MenuButton.h"
+#include "checkML.h"
+#include <iostream>
 
 class MainMenuState : public GameState {
 protected:
-	
+	//MenuButton* playButton;
 public:
-	MainMenuState() {};
-	~MainMenuState() { limpiar(); }
-	void limpiar();
-
-	void update() {};
-	void render() {};
-	void handleEvent() {};
+	MainMenuState();
+	~MainMenuState();
 };
+
+#endif

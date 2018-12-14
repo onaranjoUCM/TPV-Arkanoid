@@ -4,6 +4,7 @@
 
 // ESTO ES AHORA EL EQUIVALENTE A GAME
 using uint = unsigned int;
+
 class SDLApplication {
 protected:
 	SDL_Window* window = nullptr;
@@ -23,4 +24,6 @@ public:
 	void run();
 	void render();
 	void handleEvents();
+
+	GameStateMachine* getStateMachine();
 };

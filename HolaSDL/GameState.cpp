@@ -1,11 +1,17 @@
 #include "GameState.h"
 
-void GameState::render(){}
-void GameState::update(){
+void GameState::render() {
+	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
+		((*it++))->render();
+	}
+}
+
+void GameState::update() {
 	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
 		((*it++))->update();
 	}
 }
+
 bool GameState::handleEvents(SDL_Event& e){
 	/*
 	auto it = stage.begin();

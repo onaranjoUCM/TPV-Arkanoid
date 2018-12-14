@@ -12,11 +12,11 @@ class SDLApplication;
 class GameState {
 protected:
 	list<GameObject*> objects;
-	SDLApplication* game;
+	SDLApplication* app;
 public:
 	~GameState() {};
-	void update();
-	void render();
-	bool handleEvents(SDL_Event& e);
+	virtual void update();
+	virtual void render();
+	virtual bool handleEvents(SDL_Event& e);
 };
 #endif

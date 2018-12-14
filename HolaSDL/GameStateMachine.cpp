@@ -1,12 +1,8 @@
 #include "GameStateMachine.h"
 
-GameStateMachine::GameStateMachine() {
+GameStateMachine::GameStateMachine() { }
 
-}
-
-GameStateMachine::~GameStateMachine() {
-
-}
+GameStateMachine::~GameStateMachine() { }
 
 GameState* GameStateMachine::getCurrentState() {
 	return currentState;
@@ -14,10 +10,9 @@ GameState* GameStateMachine::getCurrentState() {
 
 void GameStateMachine::pushState(GameState *pState)
 {
-	/*
-	stack.push_back(pState);
-	stack.back()->onEnter();
-	*/
+	stack.push(pState);
+	currentState = stack.top();
+	//stack.back()->onEnter();
 }
 
 void GameStateMachine::popState()

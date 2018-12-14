@@ -1,9 +1,4 @@
 #include "GameState.h"
-#include "GameState.h"
-#include "PlayState.h"
-//#include "MainMenuState.h"
-//#include "PauseState.h"
-//#include "EndState.h"
 #include "stack"
 
 class GameStateMachine {
@@ -12,8 +7,6 @@ class GameStateMachine {
 		stack<GameState*> stack; // Como pone el enunciado
 		//list<GameState*> machineGameStates; //como lo haria yo
 		//std::vector<GameState*> machineGameStates; // como recomienda el libro ese
-
-		PlayState* playState = nullptr;
 	public:
 		GameStateMachine();
 		~GameStateMachine();

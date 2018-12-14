@@ -2,25 +2,25 @@
 #define PlayStateH
 
 #include "GameState.h"
-#include "Vector2D.h"
-#include "Texture.h"
+#include "SDLApplication.h"
 
-class SDLApplication;
+//class SDLApplication;
 class PlayState : public GameState
 {
 private:
 	static const std::string sPlayID;
+	SDLApplication* app = nullptr;
 public:
-	~PlayState() { limpiar(); }
-	void limpiar();
+	PlayState();
+	~PlayState();
 
 	void update();
 	void render();
 	void handleEvent();
 
-	virtual bool onEnter();
-	virtual bool onExit();
-	virtual std::string getStateID() const { return sPlayID; }
+	//virtual bool onEnter();
+	//virtual bool onExit();
+	//virtual std::string getStateID() const { return sPlayID; }
 };
 
 #endif

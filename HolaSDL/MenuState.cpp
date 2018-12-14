@@ -1,21 +1,23 @@
 #include "MenuState.h"
 
-void limpiar(){}
+MenuState::MenuState() {}
+
+MenuState::~MenuState() {}
 
 void MenuState::update() { }
 
 void MenuState::render() { }
 
 void MenuState::handleEvents() {}
-
+/*
 bool MenuState::onEnter()
 {
-	std::cout << "entering MenuState\n";
+	cout << "entering MenuState\n";
 	return true;
 }
 
 bool MenuState::onExit()
 {
-	std::cout << "exiting MenuState\n";
+	cout << "exiting MenuState\n";
 	return true;
-}
+}*/
