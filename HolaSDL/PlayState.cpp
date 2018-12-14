@@ -1,5 +1,4 @@
 #include "PlayState.h"
-#include "PauseState.h"
 #include "checkML.h"
 
 //const std::string PlayState::sPlayID = "PLAY";
@@ -24,7 +23,7 @@ void PlayState::handleEvent() {
 	SDL_Event e;
 	while (SDL_PollEvent(&e) && !exit) {
 		if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
-			app->getStateMachine()->pushState(new PauseState);
+			//app->getStateMachine()->pushState(new PauseState);
 		}
 		else {
 			GameState::handleEvents(e);

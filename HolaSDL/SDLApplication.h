@@ -1,6 +1,7 @@
+#include "GameStateMachine.h"	// Verificado
 #include "SDL_image.h"
 #include "Texture.h"
-#include "GameStateMachine.h"
+#include <iostream>
 
 // ESTO ES AHORA EL EQUIVALENTE A GAME
 using uint = unsigned int;
@@ -13,10 +14,10 @@ protected:
 	const uint winHeight = 600;
 
 	bool exit = false;
-	Texture* textures[6];	// Cambiar inmediato
-
-	enum GameState { menu, play, end, pause };
+	Texture* textures[6];	// Cambiar inmediato?
 	GameStateMachine* stateMachine = nullptr;
+	enum GameState { menu, play, end, pause };
+
 public:
 	SDLApplication();
 	~SDLApplication();

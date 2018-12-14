@@ -9,6 +9,7 @@ void MenuState::update() { }
 void MenuState::render() { }
 
 void MenuState::handleEvents() {}
+
 /*
 bool MenuState::onEnter()
 {

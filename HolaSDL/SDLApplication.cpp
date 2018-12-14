@@ -1,6 +1,4 @@
 #include "SDLApplication.h"
-#include "MainMenuState.h"
-#include "checkML.h"
 
 SDLApplication::SDLApplication() {
 	cout << "Cargado SDLApplication" << endl;
@@ -11,7 +9,6 @@ SDLApplication::SDLApplication() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
 	stateMachine = new GameStateMachine();
-	stateMachine->pushState(new MainMenuState());
 }
 
 SDLApplication::~SDLApplication() {

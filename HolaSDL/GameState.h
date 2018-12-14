@@ -8,11 +8,9 @@
 
 using namespace std;
 
-class SDLApplication;
 class GameState {
 protected:
 	list<GameObject*> objects;
-	SDLApplication* app;
 public:
 	~GameState() {};
 	virtual void update();

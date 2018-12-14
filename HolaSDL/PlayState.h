@@ -2,6 +2,7 @@
 #define PlayStateH
 
 #include "GameState.h"
+#include "PauseState.h"
 #include "SDLApplication.h"
 
 //class SDLApplication;
@@ -9,7 +10,7 @@ class PlayState : public GameState
 {
 private:
 	static const std::string sPlayID;
-	SDLApplication* app = nullptr;
+	//SDLApplication* app = nullptr;
 public:
 	PlayState();
 	~PlayState();

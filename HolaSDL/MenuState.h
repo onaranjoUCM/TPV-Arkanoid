@@ -2,8 +2,7 @@
 #include "MenuButton.h"
 #include <iostream>
 
-class MenuState
-{
+class MenuState : public GameState{
 private:
 	//static const std::string sMenuID;
 	//std::vector<ArkanoidObject*> menuGameObjects;

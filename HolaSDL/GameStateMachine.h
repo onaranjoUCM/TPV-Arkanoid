@@ -1,12 +1,11 @@
 #include "GameState.h"
+#include "MainMenuState.h"
 #include "stack"
 
 class GameStateMachine {
 	protected:
 		GameState* currentState = nullptr;
-		stack<GameState*> stack; // Como pone el enunciado
-		//list<GameState*> machineGameStates; //como lo haria yo
-		//std::vector<GameState*> machineGameStates; // como recomienda el libro ese
+		stack<GameState*> stack;
 	public:
 		GameStateMachine();
 		~GameStateMachine();

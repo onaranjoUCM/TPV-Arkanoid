@@ -1,6 +1,8 @@
 #include "GameStateMachine.h"
 
-GameStateMachine::GameStateMachine() { }
+GameStateMachine::GameStateMachine() {
+	pushState(new MainMenuState());
+}
 
 GameStateMachine::~GameStateMachine() { }
 

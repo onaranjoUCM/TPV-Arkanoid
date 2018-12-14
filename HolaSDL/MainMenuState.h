@@ -1,17 +1,18 @@
 #ifndef MainMenuStateH;
 #define MainMenuStateH
 
-#include "GameState.h"
-//#include "MenuButton.h"
+#include "MenuState.h"
 #include "checkML.h"
 #include <iostream>
 
-class MainMenuState : public GameState {
+class MainMenuState : public MenuState {
 protected:
-	//MenuButton* playButton;
+	
 public:
 	MainMenuState();
 	~MainMenuState();
+
+	void handleEvents();
 };
 
 #endif
