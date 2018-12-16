@@ -8,7 +8,7 @@ SDLApplication::SDLApplication() {
 		SDL_WINDOWPOS_CENTERED, winWidth, winHeight, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
-	//stateMachine = new GameStateMachine();
+	stateMachine = new GameStateMachine();
 }
 
 SDLApplication::~SDLApplication() {
@@ -26,7 +26,7 @@ void SDLApplication::run() {
 	while (!exit) {
 		render();
 		handleEvents();
-		//stateMachine->getCurrentState()->update();
+		stateMachine->getCurrentState()->update();
 	}
 }
 
@@ -35,7 +35,7 @@ void SDLApplication::render() {
 		cout << "Error cargando SDL" << endl;
 	else {
 		SDL_RenderClear(renderer);
-		//stateMachine->getCurrentState()->render();
+		stateMachine->getCurrentState()->render();
 		SDL_RenderPresent(renderer);
 	}
 }
@@ -47,11 +47,11 @@ void SDLApplication::handleEvents() {
 			exit = true;
 		}
 		else {
-			//stateMachine->getCurrentState()->handleEvents(e);
+			stateMachine->getCurrentState()->handleEvents(e);
 		}
 	}
 }
 
-/*GameStateMachine* SDLApplication::getStateMachine() {
+GameStateMachine* SDLApplication::getStateMachine() {
 	return stateMachine;
-}*/
+}

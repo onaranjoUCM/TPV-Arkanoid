@@ -1,8 +1,8 @@
 #include "GameStateMachine.h"
 
-/*GameStateMachine::GameStateMachine() {
-	//pushState(new MainMenuState());
-}*/
+GameStateMachine::GameStateMachine() {
+	pushState(new MainMenuState());
+}
 
 GameStateMachine::~GameStateMachine() { }
 
@@ -14,7 +14,7 @@ void GameStateMachine::pushState(GameState *pState)
 {
 	stack.push(pState);
 	currentState = stack.top();
-	m_gameStates.back()->onEnter();
+	//m_gameStates.back()->onEnter();
 }
 
 void GameStateMachine::popState()
@@ -23,12 +23,12 @@ void GameStateMachine::popState()
 	{
 		delete stack.top();
 		stack.pop();
-		
+		/*
 		if (m_gameStates.back()->onExit())
 		{
 			delete m_gameStates.back();
 			m_gameStates.pop_back();
-		}
+		}*/
 	}
 }
 
@@ -50,21 +50,23 @@ void GameStateMachine::changeState(GameState *pState)
 		}
 	}*/
 	// push back our new state
-	m_gameStates.push_back(pState);
+	//m_gameStates.push_back(pState);
 	// initialise it
-	m_gameStates.back()->onEnter();
+	//m_gameStates.back()->onEnter();
 }
 
 void GameStateMachine::update() {
+	/*
 	if (!m_gameStates.empty()) {
 		m_gameStates.back()->update();
-	}
+	}*/
 }
 
 void GameStateMachine::render() {
+	/*
 	if (!m_gameStates.empty()) {
 		m_gameStates.back()->render();
-	}
+	}*/
 }
 
 void GameStateMachine::handleEvents() {

@@ -7,8 +7,8 @@ class GameStateMachine {
 	protected:
 		//NOTA: push(), pop(), etc requieren stack, pero back()
 		//requiere vector
+		//std::vector<GameState*> m_gameStates;
 		GameState* currentState = nullptr;
-		std::vector<GameState*> m_gameStates;
 		std::stack<GameState*> stack;
 	public:
 		GameStateMachine();

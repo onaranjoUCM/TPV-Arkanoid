@@ -6,7 +6,6 @@
 // ESTO ES AHORA EL EQUIVALENTE A GAME
 using uint = unsigned int;
 
-class GameStateMachine;
 class SDLApplication {
 protected:
 	SDL_Window* window = nullptr;
@@ -16,7 +15,7 @@ protected:
 
 	bool exit = false;
 	Texture* textures[6];	// Cambiar inmediato?
-	//GameStateMachine* stateMachine = nullptr;
+	GameStateMachine* stateMachine = nullptr;
 	enum GameState { menu, play, end, pause };
 
 public:
@@ -27,5 +26,5 @@ public:
 	void render();
 	void handleEvents();
 
-	//GameStateMachine* getStateMachine();
+	GameStateMachine* getStateMachine();
 };

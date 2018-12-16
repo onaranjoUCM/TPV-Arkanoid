@@ -12,6 +12,8 @@ public:
 	MainMenuState();
 	~MainMenuState();
 
+	bool onExit();
+	bool onEnter();
 	void handleEvents();
 };
 
