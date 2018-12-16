@@ -20,9 +20,9 @@ public:
 	//metodos de la hoja de teoria
 	virtual bool onEnter() = 0;
 	virtual bool onExit() = 0;
-	virtual std::string getStateID() const { return s_menuID; }
+	//virtual std::string getStateID() const { return s_menuID; }
 
 private:
-	static const std::string s_menuID;
+	//static const std::string s_menuID;
 };
 #endif

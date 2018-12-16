@@ -1,8 +1,8 @@
 #include "GameStateMachine.h"
 
-GameStateMachine::GameStateMachine() {
-	pushState(new MainMenuState());
-}
+/*GameStateMachine::GameStateMachine() {
+	//pushState(new MainMenuState());
+}*/
 
 GameStateMachine::~GameStateMachine() { }
 
@@ -37,7 +37,7 @@ void GameStateMachine::changeState(GameState *pState)
 	popState();
 	pushState(pState);
 
-	if (!m_gameStates.empty())
+	/*if (!m_gameStates.empty())
 	{
 		if (m_gameStates.back()->getStateID() == pState->getStateID())
 		{
@@ -48,7 +48,7 @@ void GameStateMachine::changeState(GameState *pState)
 			delete m_gameStates.back();
 			m_gameStates.pop_back();
 		}
-	}
+	}*/
 	// push back our new state
 	m_gameStates.push_back(pState);
 	// initialise it

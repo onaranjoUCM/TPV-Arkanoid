@@ -9,7 +9,7 @@
 class PlayState : public GameState
 {
 private:
-	static const std::string sPlayID;
+	//static const std::string sPlayID;
 	//SDLApplication* app = nullptr;
 public:
 	PlayState();

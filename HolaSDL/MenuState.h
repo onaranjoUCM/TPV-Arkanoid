@@ -19,8 +19,8 @@ public:
 	virtual void render();
 	virtual void handleEvents();
 
-	virtual bool onEnter();
-	virtual bool onExit();
-	virtual std::string getStateID() const { return sMenuID; }
+	//virtual bool onEnter();
+	//virtual bool onExit();
+	//virtual std::string getStateID() const { return sMenuID; }
 };
 

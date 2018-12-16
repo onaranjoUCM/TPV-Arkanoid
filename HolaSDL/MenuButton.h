@@ -28,7 +28,7 @@ class MenuButton : public ArkanoidObject {
 		bool HandleEvents(SDL_Event& e);
 
 		//metodos de la teoria
-		virtual void render(); //de draw() a render()
+		//virtual void render(); //de draw() a render()
 		virtual void update();
 		virtual void clean();
 	private:
