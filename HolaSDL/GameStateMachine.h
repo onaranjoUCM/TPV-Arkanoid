@@ -1,11 +1,15 @@
 #include "GameState.h"
 #include "MainMenuState.h"
-#include "stack"
+#include <stack>
+#include <vector>
 
 class GameStateMachine {
 	protected:
+		//NOTA: push(), pop(), etc requieren stack, pero back()
+		//requiere vector
 		GameState* currentState = nullptr;
-		stack<GameState*> stack;
+		std::vector<GameState*> m_gameStates;
+		std::stack<GameState*> stack;
 	public:
 		GameStateMachine();
 		~GameStateMachine();
@@ -14,6 +18,10 @@ class GameStateMachine {
 		void pushState(GameState* pState);
 		void changeState(GameState* pState);
 		void popState();
+
+		void update();
+		void render();
+		void handleEvents();
 };
 
 /*class GameStateMachine

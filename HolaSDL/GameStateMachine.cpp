@@ -14,7 +14,7 @@ void GameStateMachine::pushState(GameState *pState)
 {
 	stack.push(pState);
 	currentState = stack.top();
-	//stack.back()->onEnter();
+	m_gameStates.back()->onEnter();
 }
 
 void GameStateMachine::popState()
@@ -24,13 +24,11 @@ void GameStateMachine::popState()
 		delete stack.top();
 		stack.pop();
 		
-		// ESTO NO SE DE DONDE SALE
-		/*
-		if (stack.back()->onExit())
+		if (m_gameStates.back()->onExit())
 		{
-			delete stack.back();
-			stack.pop_back();
-		}*/
+			delete m_gameStates.back();
+			m_gameStates.pop_back();
+		}
 	}
 }
 
@@ -39,23 +37,36 @@ void GameStateMachine::changeState(GameState *pState)
 	popState();
 	pushState(pState);
 
-	// ESTO NO SE DE DONDE SALE
-	/*
-	if (!stack.empty())
+	if (!m_gameStates.empty())
 	{
-		if (stack.back()->getStateID() == pState->getStateID())
+		if (m_gameStates.back()->getStateID() == pState->getStateID())
 		{
 			return; // do nothing
 		}
-		if (stack.back()->onExit())
+		if (m_gameStates.back()->onExit())
 		{
-			delete stack.back();
-			stack.pop_back();
+			delete m_gameStates.back();
+			m_gameStates.pop_back();
 		}
 	}
 	// push back our new state
-	stack.push_back(pState);
+	m_gameStates.push_back(pState);
 	// initialise it
-	stack.back()->onEnter();
-	*/
+	m_gameStates.back()->onEnter();
+}
+
+void GameStateMachine::update() {
+	if (!m_gameStates.empty()) {
+		m_gameStates.back()->update();
+	}
+}
+
+void GameStateMachine::render() {
+	if (!m_gameStates.empty()) {
+		m_gameStates.back()->render();
+	}
+}
+
+void GameStateMachine::handleEvents() {
+
 }
