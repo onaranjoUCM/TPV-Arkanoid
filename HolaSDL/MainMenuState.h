@@ -1,19 +1,17 @@
 #ifndef MainMenuStateH;
 #define MainMenuStateH
 
-#include "MenuState.h"
+#include "GameState.h"
 #include "checkML.h"
 #include <iostream>
 
-class MainMenuState : public MenuState {
+class MainMenuState : public GameState {
 protected:
 	
 public:
 	MainMenuState();
 	~MainMenuState();
 
-	bool onExit();
-	bool onEnter();
 	void handleEvents();
 };
 

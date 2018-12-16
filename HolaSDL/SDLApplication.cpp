@@ -45,8 +45,7 @@ void SDLApplication::handleEvents() {
 	while (SDL_PollEvent(&e) && !exit) {
 		if (e.type == SDL_QUIT) {
 			exit = true;
-		}
-		else {
+		} else {
 			stateMachine->getCurrentState()->handleEvents(e);
 		}
 	}

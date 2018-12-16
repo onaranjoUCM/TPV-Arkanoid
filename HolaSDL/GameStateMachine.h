@@ -3,13 +3,12 @@
 #include <stack>
 #include <vector>
 
+using namespace std;
+
 class GameStateMachine {
 	protected:
-		//NOTA: push(), pop(), etc requieren stack, pero back()
-		//requiere vector
-		//std::vector<GameState*> m_gameStates;
 		GameState* currentState = nullptr;
-		std::stack<GameState*> stack;
+		stack<GameState*> stack;
 	public:
 		GameStateMachine();
 		~GameStateMachine();
@@ -23,31 +22,3 @@ class GameStateMachine {
 		void render();
 		void handleEvents();
 };
-
-/*class GameStateMachine
-{
-private:
-	Stack << GameState * >> stack;
-public:
-	GameStateMachine();
-	~GameStateMachine();
-
-	GameStates currentState() { return ...(? ); }
-	void popState() {
-		if (stack.empty()) {
-			delete stack.top();
-			stack.pop();
-		}
-	}
-	void changeStates(GameState s) {
-		popState();
-		pushState(s);
-	}
-	void handleEvents() {
-		while (event) {
-			if (event.type == SDL_QUIT) exit = true;
-			else
-				stateMachine.CurrentState->handleEvents(event);
-		}
-	}
-};*/

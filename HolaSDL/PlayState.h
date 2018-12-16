@@ -5,10 +5,8 @@
 #include "PauseState.h"
 #include "SDLApplication.h"
 
-//class SDLApplication;
-class PlayState : public GameState
-{
-private:
+class PlayState : public GameState {
+protected:
 	//static const std::string sPlayID;
 	//SDLApplication* app = nullptr;
 public:
@@ -19,8 +17,6 @@ public:
 	void render();
 	void handleEvent();
 
-	//virtual bool onEnter();
-	//virtual bool onExit();
 	//virtual std::string getStateID() const { return sPlayID; }
 };
 

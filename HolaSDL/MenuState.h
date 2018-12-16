@@ -3,14 +3,12 @@
 #include <iostream>
 #include <vector>
 //#include "SDLApplication.h"
-//#include "ArkanoidObject.h"
 //#include "MenuButton.h"
 
 class MenuState : public GameState{
-private:
-	std::vector<GameObject*> m_gameObjects;
-	static const std::string sMenuID;
-	//std::vector<ArkanoidObject*> menuGameObjects;
+protected:
+	//std::vector<GameObject*> m_gameObjects;
+	//static const std::string sMenuID;
 	//Texture* texturaButton = nullptr;
 public:
 	MenuState();
@@ -19,8 +17,6 @@ public:
 	virtual void render();
 	virtual void handleEvents();
 
-	//virtual bool onEnter();
-	//virtual bool onExit();
 	//virtual std::string getStateID() const { return sMenuID; }
 };
 

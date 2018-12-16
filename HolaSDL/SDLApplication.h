@@ -1,9 +1,8 @@
-#include "GameStateMachine.h"	// Verificado
+#include "GameStateMachine.h"
 #include "SDL_image.h"
 #include "Texture.h"
 #include <iostream>
 
-// ESTO ES AHORA EL EQUIVALENTE A GAME
 using uint = unsigned int;
 
 class SDLApplication {

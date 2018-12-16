@@ -2,10 +2,11 @@
 #define GameObjectH
 
 class GameObject {
-private:
+protected:
 	
 public:
-	~GameObject() { }
+	GameObject();
+	~GameObject();
 	virtual void render() = 0;
 	virtual void update() = 0;
 	virtual void handleEvents() = 0;

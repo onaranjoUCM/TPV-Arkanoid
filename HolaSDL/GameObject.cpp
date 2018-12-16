@@ -1,16 +1,12 @@
 #include "GameObject.h"
 #include "checkML.h"
 
-using namespace std;
+GameObject::GameObject() {}
 
-void GameObject::render() {
-	
-}
+GameObject::~GameObject() {}
 
-void GameObject::update() {
+void GameObject::render() {}
 
-}
+void GameObject::update() {}
 
-void GameObject::handleEvents() {
-
-}
+void GameObject::handleEvents() {}

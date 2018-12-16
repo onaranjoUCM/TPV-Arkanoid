@@ -8,9 +8,6 @@ MainMenuState::~MainMenuState() {
 
 }
 
-bool MainMenuState::onExit() { return true; }
-bool MainMenuState::onEnter() { return true; }
-
 void MainMenuState::handleEvents() {
-	
+
 }
