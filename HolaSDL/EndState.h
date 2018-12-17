@@ -9,7 +9,7 @@ class EndState : public GameState {
 protected:
 
 public:
-	EndState();
+	EndState(SDLApplication* app) : GameState(app) {}
 	~EndState();
 
 	void update();

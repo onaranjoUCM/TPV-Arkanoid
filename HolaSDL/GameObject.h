@@ -1,6 +1,7 @@
 #ifndef GameObjectH
 #define GameObjectH
 
+class SDLApplication;
 class GameObject {
 protected:
 	

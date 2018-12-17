@@ -9,7 +9,7 @@ class PauseState : public GameState {
 protected:
 
 public:
-	PauseState();
+	PauseState(SDLApplication* app) : GameState(app) {}
 	~PauseState();
 
 	void update();

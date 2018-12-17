@@ -4,17 +4,17 @@
 #include "GameObject.h"
 #include "Texture.h"
 
-//using CallBackOnClick = void(SDLApplication* app);
+using CallBackOnClick = void(SDLApplication* app);
 
-//class SDLApplication;
 class MenuButton : public GameObject {
 	protected:
-		//CallBackOnClick* cb;
-		//SDLApplication* app;
+		CallBackOnClick* cb;
+		SDLApplication* app;
 		int x, y, w, h;
 		Texture* texture;
 	public:
-		MenuButton(int x, int y, int w, int h, Texture* texture/*, void callback(SDLApplication* app)*/);
+		MenuButton() {}
+		MenuButton(int x, int y, int w, int h, Texture* texture, void (*callback)(SDLApplication* app));
 		~MenuButton();
 
 		void render();

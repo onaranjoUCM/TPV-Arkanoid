@@ -5,7 +5,7 @@
 //#include "SDLApplication.h"
 //#include "MenuButton.h"
 
-class MenuState : public GameState{
+class MenuState{
 protected:
 	//std::vector<GameObject*> m_gameObjects;
 	//static const std::string sMenuID;

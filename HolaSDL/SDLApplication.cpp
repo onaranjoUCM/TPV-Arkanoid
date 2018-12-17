@@ -9,6 +9,7 @@ SDLApplication::SDLApplication() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
 	stateMachine = new GameStateMachine();
+	stateMachine->pushState(new MainMenuState(this));
 }
 
 SDLApplication::~SDLApplication() {

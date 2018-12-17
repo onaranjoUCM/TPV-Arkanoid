@@ -1,9 +1,5 @@
 #include "PauseState.h"
 
-PauseState::PauseState() {
-	cout << "Cargado PauseState" << endl;
-}
-
 PauseState::~PauseState() {
 
 }

@@ -1,9 +1,5 @@
 #include "EndState.h"
 
-EndState::EndState() {
-	cout << "Cargado EndState" << endl;
-}
-
 EndState::~EndState() {
 
 }

@@ -1,12 +1,6 @@
 #include "PlayState.h"
 #include "checkML.h"
 
-//const std::string PlayState::sPlayID = "PLAY";
-
-PlayState::PlayState() {
-
-}
-
 PlayState::~PlayState() {
 
 }

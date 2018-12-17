@@ -10,7 +10,7 @@ protected:
 	//static const std::string sPlayID;
 	//SDLApplication* app = nullptr;
 public:
-	PlayState();
+	PlayState(SDLApplication* app) : GameState(app) {}
 	~PlayState();
 
 	void update();
