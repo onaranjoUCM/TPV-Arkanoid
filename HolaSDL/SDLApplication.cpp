@@ -8,13 +8,11 @@ SDLApplication::SDLApplication() {
 		SDL_WINDOWPOS_CENTERED, winWidth, winHeight, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
-	gameStates[menu] = new MainMenuState(this);
-	gameStates[play] = new PlayState(this);
-	gameStates[end] = new EndState(this);
-	gameStates[pause] = new PauseState(this);
+	textures[0] = new Texture(renderer);
+	textures[0]->load("..\\images\\play.png", 1, 1);
 
 	stateMachine = new GameStateMachine();
-	stateMachine->pushState(gameStates[menu]);
+	stateMachine->pushState(new MainMenuState(this));
 }
 
 SDLApplication::~SDLApplication() {
@@ -59,4 +57,8 @@ void SDLApplication::handleEvents() {
 
 GameStateMachine* SDLApplication::getStateMachine() {
 	return stateMachine;
+}
+
+Texture* SDLApplication::getTextures(int i) {
+	return textures[i];
 }

@@ -1,4 +1,5 @@
 #include "GameState.h"
+#include <iostream>
 
 void GameState::render() {
 	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
@@ -13,16 +14,14 @@ void GameState::update() {
 }
 
 bool GameState::handleEvents(SDL_Event& e){
-	/*
-	auto it = stage.begin();
-	while (it != stage.end() && !handled) {
+	bool handled = false;
+	auto it = objects.begin();
+	while (it != objects.end() && !handled) {
 		if ((*it)->handleEvent(e)) {
 			handled = true;
-		}
-		else {
+		} else {
 			++it;
 		}
 	}
-	*/
-	return true;
+	return handled;
 }

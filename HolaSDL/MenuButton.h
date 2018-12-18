@@ -19,7 +19,6 @@ class MenuButton : public GameObject {
 
 		void render();
 		void update() {};
-		void handleEvents() {};
 		bool handleEvent(SDL_Event& e);
 };
 #endif

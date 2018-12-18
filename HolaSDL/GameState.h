@@ -18,6 +18,6 @@ public:
 	~GameState() {};
 	virtual void update();
 	virtual void render();
-	virtual bool handleEvents(SDL_Event& e);
+	bool handleEvents(SDL_Event& e);
 };
 #endif

@@ -14,7 +14,6 @@ protected:
 	Texture* textures[6];	// Cambiar inmediato?
 	GameStateMachine* stateMachine = nullptr;
 	enum enumStates { menu, play, end, pause };
-	GameState* gameStates[4];
 
 public:
 	SDLApplication();
@@ -25,4 +24,5 @@ public:
 	void handleEvents();
 
 	GameStateMachine* getStateMachine();
+	Texture* getTextures(int i);
 };
