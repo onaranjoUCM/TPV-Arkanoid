@@ -3,19 +3,18 @@
 #include "Texture.h"
 #include <iostream>
 
-using uint = unsigned int;
-
 class SDLApplication {
 protected:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
-	const uint winWidth = 800;
-	const uint winHeight = 600;
+	const int winWidth = 800;
+	const int winHeight = 600;
 
 	bool exit = false;
 	Texture* textures[6];	// Cambiar inmediato?
 	GameStateMachine* stateMachine = nullptr;
-	enum GameState { menu, play, end, pause };
+	enum enumStates { menu, play, end, pause };
+	GameState* gameStates[4];
 
 public:
 	SDLApplication();

@@ -1,8 +1,8 @@
 #include "PauseState.h"
 
-PauseState::~PauseState() {
-
-}
+PauseState::PauseState(SDLApplication* app) : GameState(app) {
+	
+};
 
 void PauseState::update() {
 	GameState::update();

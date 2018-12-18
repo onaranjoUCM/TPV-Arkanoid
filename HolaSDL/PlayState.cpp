@@ -1,6 +1,10 @@
 #include "PlayState.h"
 #include "checkML.h"
 
+PlayState::PlayState(SDLApplication* app) : GameState(app) {
+	
+};
+
 PlayState::~PlayState() {
 
 }

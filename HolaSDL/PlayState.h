@@ -2,22 +2,20 @@
 #define PlayStateH
 
 #include "GameState.h"
-#include "PauseState.h"
-#include "SDLApplication.h"
+#include "MenuButton.h"
+#include "checkML.h"
+#include <iostream>
 
 class PlayState : public GameState {
 protected:
-	//static const std::string sPlayID;
-	//SDLApplication* app = nullptr;
+	
 public:
-	PlayState(SDLApplication* app) : GameState(app) {}
+	PlayState(SDLApplication* app);
 	~PlayState();
 
 	void update();
 	void render();
 	void handleEvent();
-
-	//virtual std::string getStateID() const { return sPlayID; }
 };
 
 #endif

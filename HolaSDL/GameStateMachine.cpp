@@ -6,6 +6,11 @@ GameStateMachine::GameStateMachine() {
 
 GameStateMachine::~GameStateMachine() { }
 
+void GameStateMachine::updateCurrentState() {
+	currentState = stack.top();
+	cout << "Cargado " << currentState << endl;
+}
+
 GameState* GameStateMachine::getCurrentState() {
 	return currentState;
 }
@@ -13,7 +18,7 @@ GameState* GameStateMachine::getCurrentState() {
 void GameStateMachine::pushState(GameState *pState)
 {
 	stack.push(pState);
-	currentState = stack.top();
+	updateCurrentState();
 }
 
 void GameStateMachine::popState()
@@ -22,7 +27,7 @@ void GameStateMachine::popState()
 	{
 		delete stack.top();
 		stack.pop();
-		currentState = stack.top();
+		updateCurrentState();
 	}
 }
 
@@ -30,5 +35,5 @@ void GameStateMachine::changeState(GameState *pState)
 {
 	popState();
 	pushState(pState);
-	currentState = stack.top();
+	updateCurrentState();
 }

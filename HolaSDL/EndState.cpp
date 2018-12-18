@@ -1,8 +1,8 @@
 #include "EndState.h"
 
-EndState::~EndState() {
-
-}
+EndState::EndState(SDLApplication* app) : GameState(app) {
+	
+};
 
 void EndState::update() {
 	GameState::update();

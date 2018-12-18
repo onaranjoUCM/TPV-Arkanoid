@@ -1,5 +1,8 @@
 #include "GameState.h"
 #include "MainMenuState.h"
+#include "PlayState.h"
+#include "PauseState.h"
+#include "EndState.h"
 #include <stack>
 #include <vector>
 
@@ -13,6 +16,7 @@ class GameStateMachine {
 		GameStateMachine();
 		~GameStateMachine();
 
+		void updateCurrentState();
 		GameState* getCurrentState();
 		void pushState(GameState* pState);
 		void changeState(GameState* pState);

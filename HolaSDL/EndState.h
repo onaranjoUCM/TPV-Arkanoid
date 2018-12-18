@@ -2,6 +2,7 @@
 #define EndStateH
 
 #include "GameState.h"
+#include "MenuButton.h"
 #include "checkML.h"
 #include <iostream>
 
@@ -9,7 +10,7 @@ class EndState : public GameState {
 protected:
 
 public:
-	EndState(SDLApplication* app) : GameState(app) {}
+	EndState(SDLApplication* app);
 	~EndState();
 
 	void update();

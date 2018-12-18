@@ -8,8 +8,13 @@ SDLApplication::SDLApplication() {
 		SDL_WINDOWPOS_CENTERED, winWidth, winHeight, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
+	gameStates[menu] = new MainMenuState(this);
+	gameStates[play] = new PlayState(this);
+	gameStates[end] = new EndState(this);
+	gameStates[pause] = new PauseState(this);
+
 	stateMachine = new GameStateMachine();
-	stateMachine->pushState(new MainMenuState(this));
+	stateMachine->pushState(gameStates[menu]);
 }
 
 SDLApplication::~SDLApplication() {
