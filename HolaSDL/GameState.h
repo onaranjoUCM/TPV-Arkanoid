@@ -14,10 +14,10 @@ protected:
 	list<GameObject*> objects;
 	SDLApplication* app;
 public:
-	GameState(SDLApplication* app) {};
-	~GameState() {};
-	void update();
-	void render();
+	GameState(SDLApplication* app);
+	~GameState();
+	virtual void update();
+	virtual void render();
 	virtual bool handleEvents(SDL_Event& e);
 };
 #endif

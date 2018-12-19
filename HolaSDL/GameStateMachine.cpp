@@ -1,15 +1,16 @@
 #include "GameStateMachine.h"
 #include <iostream>
 
-GameStateMachine::GameStateMachine() {
-	
-}
+GameStateMachine::GameStateMachine() {}
 
-GameStateMachine::~GameStateMachine() { }
+GameStateMachine::~GameStateMachine() {}
 
 void GameStateMachine::updateCurrentState() {
-	currentState = stack.top();
-	cout << "Cargado " << currentState << endl;
+	if (!stack.empty())
+	{
+		currentState = stack.top();
+		cout << "Cargado estado: " << currentState << endl;
+	}
 }
 
 GameState* GameStateMachine::getCurrentState() {
@@ -26,7 +27,7 @@ void GameStateMachine::popState()
 {
 	if (!stack.empty())
 	{
-		delete stack.top();
+		//delete stack.top();
 		stack.pop();
 		updateCurrentState();
 	}

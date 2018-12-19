@@ -25,5 +25,5 @@ public:
 	void handleEvents();
 
 	GameStateMachine* getStateMachine();
-	Texture* getTextures(int i);
+	Texture* getTexture(int i);
 };

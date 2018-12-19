@@ -14,6 +14,7 @@ public:
 	PlayState(SDLApplication* app);
 	~PlayState();
 
+	void render();	// Temporal
 	bool handleEvents(SDL_Event& e);
 };
 

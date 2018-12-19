@@ -10,6 +10,8 @@ SDLApplication::SDLApplication() {
 	
 	textures[0] = new Texture(renderer);
 	textures[0]->load("..\\images\\play.png", 1, 1);
+	textures[1] = new Texture(renderer);
+	textures[1]->load("..\\images\\bricks.png", 1, 1);
 
 	stateMachine = new GameStateMachine();
 	stateMachine->pushState(new MainMenuState(this));
@@ -59,6 +61,6 @@ GameStateMachine* SDLApplication::getStateMachine() {
 	return stateMachine;
 }
 
-Texture* SDLApplication::getTextures(int i) {
+Texture* SDLApplication::getTexture(int i) {
 	return textures[i];
 }

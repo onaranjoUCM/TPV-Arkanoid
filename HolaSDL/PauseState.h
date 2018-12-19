@@ -2,20 +2,21 @@
 #define PauseStateH
 
 #include "GameState.h"
+#include "PlayState.h"
 #include "MenuButton.h"
 #include "checkML.h"
 #include <iostream>
 
 class PauseState : public GameState {
 protected:
-
+	MenuButton* playButton;
+	MenuButton* menuButton;
 public:
 	PauseState(SDLApplication* app);
 	~PauseState();
 
-	void update();
-	void render();
-	void handleEvent();
+	static void playButtonClicked(SDLApplication* app);
+	static void menuButtonClicked(SDLApplication* app);
 };
 
 #endif
