@@ -14,7 +14,7 @@ class MenuButton : public GameObject {
 		Texture* texture;
 	public:
 		MenuButton() {}
-		MenuButton(int x, int y, int w, int h, Texture* texture, void (*callback)(SDLApplication* app));
+		MenuButton(int x, int y, int w, int h, Texture* texture, SDLApplication* a, void (*callback)(SDLApplication* app));
 		~MenuButton();
 
 		void render();

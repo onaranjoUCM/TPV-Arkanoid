@@ -1,8 +1,4 @@
 #include "GameState.h"
-#include "MainMenuState.h"
-#include "PlayState.h"
-#include "PauseState.h"
-#include "EndState.h"
 #include <stack>
 #include <vector>
 

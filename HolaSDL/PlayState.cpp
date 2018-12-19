@@ -1,5 +1,5 @@
 #include "PlayState.h"
-#include "checkML.h"
+#include "SDLApplication.h"
 
 PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	
@@ -9,22 +9,13 @@ PlayState::~PlayState() {
 
 }
 
-void PlayState::update() {
-	GameState::update();
-}
-
-void PlayState::render() {
-	GameState::render();
-}
-
-void PlayState::handleEvent() {
-	SDL_Event e;
-	while (SDL_PollEvent(&e) && !exit) {
-		if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
-			//app->getStateMachine()->pushState(new PauseState);
-		}
-		else {
-			GameState::handleEvents(e);
-		}
+bool PlayState::handleEvents(SDL_Event& e) {
+	if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+		cout << app;
+		//app->getStateMachine()->pushState(new PauseState(app));
 	}
+	else {
+		GameState::handleEvents(e);
+	}
+	return true;
 }

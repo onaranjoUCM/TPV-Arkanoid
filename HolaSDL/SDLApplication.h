@@ -1,4 +1,5 @@
 #include "GameStateMachine.h"
+#include "MainMenuState.h"
 #include "SDL_image.h"
 #include "Texture.h"
 #include <iostream>
@@ -12,7 +13,7 @@ protected:
 
 	bool exit = false;
 	Texture* textures[6];	// Cambiar inmediato?
-	GameStateMachine* stateMachine = nullptr;
+	GameStateMachine* stateMachine;
 	enum enumStates { menu, play, end, pause };
 
 public:

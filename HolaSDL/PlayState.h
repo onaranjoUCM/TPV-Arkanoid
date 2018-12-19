@@ -2,6 +2,7 @@
 #define PlayStateH
 
 #include "GameState.h"
+#include "PauseState.h"
 #include "MenuButton.h"
 #include "checkML.h"
 #include <iostream>
@@ -13,9 +14,7 @@ public:
 	PlayState(SDLApplication* app);
 	~PlayState();
 
-	void update();
-	void render();
-	void handleEvent();
+	bool handleEvents(SDL_Event& e);
 };
 
 #endif

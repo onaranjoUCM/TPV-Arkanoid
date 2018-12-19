@@ -1,6 +1,8 @@
 #ifndef GameObjectH
 #define GameObjectH
 
+#include "SDL.h"
+
 class SDLApplication;
 class GameObject {
 protected:

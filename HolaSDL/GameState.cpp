@@ -1,6 +1,14 @@
 #include "GameState.h"
 #include <iostream>
 
+GameState::GameState(SDLApplication* app) {
+
+}
+
+GameState::~GameState() {
+
+}
+
 void GameState::render() {
 	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
 		((*it++))->render();

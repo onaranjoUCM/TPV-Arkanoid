@@ -16,8 +16,8 @@ protected:
 public:
 	GameState(SDLApplication* app) {};
 	~GameState() {};
-	virtual void update();
-	virtual void render();
-	bool handleEvents(SDL_Event& e);
+	void update();
+	void render();
+	virtual bool handleEvents(SDL_Event& e);
 };
 #endif
