@@ -11,7 +11,7 @@ using namespace std;
 class SDLApplication;
 class GameState {
 protected:
-	list<GameObject*> objects;
+	list<GameObject*> stage;
 	SDLApplication* app;
 public:
 	GameState(SDLApplication* app);

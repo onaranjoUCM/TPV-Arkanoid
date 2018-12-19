@@ -6,21 +6,21 @@ GameState::GameState(SDLApplication* app) : app(app) {}
 GameState::~GameState() {}
 
 void GameState::render() {
-	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
+	for (list<GameObject*>::iterator it = stage.begin(); it != stage.end();) {
 		((*it++))->render();
 	}
 }
 
 void GameState::update() {
-	for (list<GameObject*>::iterator it = objects.begin(); it != objects.end();) {
+	for (list<GameObject*>::iterator it = stage.begin(); it != stage.end();) {
 		((*it++))->update();
 	}
 }
 
 bool GameState::handleEvents(SDL_Event& e){
 	bool handled = false;
-	auto it = objects.begin();
-	while (it != objects.end() && !handled) {
+	auto it = stage.begin();
+	while (it != stage.end() && !handled) {
 		if ((*it)->handleEvent(e)) {
 			handled = true;
 		} else {

@@ -4,8 +4,8 @@
 PauseState::PauseState(SDLApplication* app) : GameState(app) {
 	playButton = new MenuButton(10, 500, 100, 50, app->getTexture(0), app, playButtonClicked);
 	menuButton = new MenuButton(500, 500, 100, 50, app->getTexture(0), app, menuButtonClicked);
-	objects.push_back(playButton);
-	objects.push_back(menuButton);
+	stage.push_back(playButton);
+	stage.push_back(menuButton);
 };
 
 PauseState::~PauseState(){}

@@ -3,7 +3,7 @@
 
 MainMenuState::MainMenuState(SDLApplication* app) : GameState(app) {
 	playButton = new MenuButton(100, 100, 100, 50, app->getTexture(0), app, playButtonClicked);
-	objects.push_back(playButton);
+	stage.push_back(playButton);
 };
 
 MainMenuState::~MainMenuState() {}
