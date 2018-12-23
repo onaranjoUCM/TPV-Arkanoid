@@ -13,7 +13,7 @@ void PlayState::render() {	// Temporal
 	dstRect.y = 200;
 	dstRect.w = 400;
 	dstRect.h = 200;
-	Texture* texture = app->getTexture(1);
+	Texture* texture = app->getTexture(app->blocksText);
 	texture->render(dstRect, SDL_FLIP_NONE);
 }
 

@@ -9,7 +9,6 @@ void GameStateMachine::updateCurrentState() {
 	if (!stack.empty())
 	{
 		currentState = stack.top();
-		cout << "Cargado estado: " << currentState << endl;
 	}
 }
 

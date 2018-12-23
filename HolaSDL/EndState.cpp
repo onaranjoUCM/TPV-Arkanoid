@@ -2,9 +2,9 @@
 #include "SDLApplication.h"
 
 EndState::EndState(SDLApplication* app) : GameState(app) {
-	playButton = new MenuButton(10, 500, 100, 50, app->getTexture(0), app, playButtonClicked);
+	playButton = new MenuButton(10, 500, 100, 50, app->getTexture(app->playText), app, playButtonClicked);
 	stage.push_back(playButton);
-	menuButton = new MenuButton(500, 500, 100, 50, app->getTexture(5), app, playButtonClicked);
+	menuButton = new MenuButton(500, 500, 100, 50, app->getTexture(app->menuText), app, playButtonClicked);
 	stage.push_back(menuButton);
 }
 
