@@ -20,7 +20,7 @@ void GameState::update() {
 bool GameState::handleEvents(SDL_Event& e){
 	bool handled = false;
 	auto it = stage.begin();
-	while (it != stage.end() && !handled) {
+	while (!handled && it != stage.end()) {
 		if ((*it)->handleEvent(e)) {
 			handled = true;
 		} else {

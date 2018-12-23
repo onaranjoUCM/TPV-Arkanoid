@@ -27,7 +27,7 @@ void GameStateMachine::popState()
 {
 	if (!stack.empty())
 	{
-		//delete stack.top();
+		delete stack.top();
 		stack.pop();
 		updateCurrentState();
 	}
