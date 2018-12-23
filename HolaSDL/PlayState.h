@@ -44,7 +44,7 @@ public:
 	void loadList();
 	void createReward(int x, int y);
 	void ganaVida();
-	//void deleteReward(Reward* r);
+	void deleteReward(Reward* r);
 	void saveGame();
 	string getNivelActual();
 };

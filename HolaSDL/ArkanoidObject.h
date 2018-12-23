@@ -25,7 +25,7 @@ public:
 	void render();
 	void renderFrame(int row, int col);
 	virtual void update() {};
-	virtual bool handleEvent(SDL_Event& e) { return true; };
+	virtual bool handleEvent(SDL_Event& e) { return false; };
 
 	void setPos(Vector2D newPos);
 

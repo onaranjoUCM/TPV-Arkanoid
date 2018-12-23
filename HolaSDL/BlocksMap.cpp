@@ -1,5 +1,5 @@
 #include "BlocksMap.h"
-//#include "Game.h"
+#include "PlayState.h"
 #include <fstream>
 #include "checkML.h"
 #include <time.h>
@@ -40,10 +40,10 @@ void BlocksMap::load(const string& filename) {
 					cells[r][c] = nullptr;
 				}
 				else {
-					//int margenX = (WIN_WIDTH - w) / 2;
-					//int posX = c * (w / cols) + margenX;
+					int margenX = (800 - w) / 2;	// CAMBIAR VALOR INMEDIATO
+					int posX = c * (w / cols) + margenX;
 					int posY = r * (h / rows) + 50;
-					//cells[r][c] = new Block(posX, posY, w / cols, h / rows, r, c, color, texture);
+					cells[r][c] = new Block(posX, posY, w / cols, h / rows, r, c, color, texture);
 					numBlocks++;
 
 					// PENDIENTE DE MEJORAS
@@ -58,7 +58,8 @@ void BlocksMap::load(const string& filename) {
 	}
 }
 
-void BlocksMap::loadFromFile(ifstream& file, Game* game) {
+void BlocksMap::loadFromFile(ifstream& file, PlayState* game) {
+	/*
 	//ArkanoidObject::loadFromFile(file, game);
 	
 	//load(game->getNivelActual());
@@ -76,9 +77,11 @@ void BlocksMap::loadFromFile(ifstream& file, Game* game) {
 		}
 	}
 	//this->texture = game->getTextures()[0];
+	*/
 }
 
 void BlocksMap::saveToFile(ofstream& outfile) {
+	/*
 	ArkanoidObject::saveToFile(outfile);
 
 	for (int r = 0; r < rows; r++) {
@@ -92,19 +95,20 @@ void BlocksMap::saveToFile(ofstream& outfile) {
 		outfile << endl;
 	}
 	outfile << endl;
+	*/
 }
 
-bool BlocksMap::checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, Game* game) {
+bool BlocksMap::checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, PlayState* playState) {
 	if (SDL_HasIntersection(rect, &getRect())) {
 		Block* block = collides(rect, vel, collVector);
 		if (block != nullptr) {
 			srand(time(NULL));
 			if (rand() % 5 == 0) {
-				//game->createReward(block->getX(), block->getY());
+				playState->createReward(block->getX(), block->getY());
 			}
 			ballHitsBlock(block);
 			if (getNumBlocks() == 0) {
-				//game->nextLevel();
+				playState->nextLevel();
 			}
 		}
 		return true;
