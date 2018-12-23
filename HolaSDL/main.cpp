@@ -12,3 +12,9 @@ int main(int argc, char* argv[]){
 	app.run();
 	return 0;
 }
+
+// TAREAS
+// Implementar destructores correctamente
+// Eliminar update y handleEvents vacios de todos los objetos que hereden de ArkanoidObject
+// Sustituir referencias a Game.h por PlayState.h o SDLApplication.h (actualmente comentadas)
+// Sustituir los void handleEvents de los objetos por bool handleEvent que se ajusten al virtual de GameObject

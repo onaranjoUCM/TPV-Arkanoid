@@ -54,6 +54,7 @@ public:
 
 	void run();
 	void render();
+	void update();
 	void handleEvents();
 
 	GameStateMachine* getStateMachine();

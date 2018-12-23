@@ -18,10 +18,14 @@ public:
 
 	~ArkanoidObject() { limpiar(); }
 	void limpiar();
+
 	virtual void loadFromFile(ifstream& file, SDLApplication* game);
 	virtual void saveToFile(ofstream& outfile);
+
 	void render();
 	void renderFrame(int row, int col);
+	virtual void update() {};
+	virtual bool handleEvent(SDL_Event& e) { return true; };
 
 	void setPos(Vector2D newPos);
 

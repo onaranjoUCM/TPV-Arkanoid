@@ -38,7 +38,7 @@ void SDLApplication::run() {
 	while (!exit) {
 		render();
 		handleEvents();
-		stateMachine->getCurrentState()->update();
+		update();
 	}
 }
 
@@ -49,6 +49,15 @@ void SDLApplication::render() {
 		SDL_RenderClear(renderer);
 		stateMachine->getCurrentState()->render();
 		SDL_RenderPresent(renderer);
+	}
+}
+
+void SDLApplication::update() {
+	stateMachine->getCurrentState()->update();
+	int startTime = SDL_GetTicks();
+	int frameTime = SDL_GetTicks() - startTime;
+	if (frameTime < FRAME_RATE) {
+		SDL_Delay(FRAME_RATE - frameTime);
 	}
 }
 

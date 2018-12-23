@@ -75,6 +75,27 @@
     <ClCompile Include="Vector2D.cpp">
       <Filter>Archivos de código fuente\Resources</Filter>
     </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="BlocksMap.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingObject.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Reward.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Archivos de código fuente\GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDLApplication.h">
@@ -115,6 +136,27 @@
     </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Archivos de encabezado\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="BlocksMap.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingObject.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Reward.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Archivos de encabezado\GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
