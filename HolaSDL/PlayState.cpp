@@ -3,7 +3,9 @@
 
 PlayState::PlayState(SDLApplication* app) : GameState(app) {};
 
-PlayState::~PlayState() {}
+PlayState::~PlayState() {
+	
+}
 
 void PlayState::render() {	// Temporal
 	SDL_Rect dstRect;

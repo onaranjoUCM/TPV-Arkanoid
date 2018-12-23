@@ -8,10 +8,14 @@
 
 class EndState : public GameState {
 protected:
-
+	MenuButton* playButton;
+	MenuButton* menuButton;
 public:
 	EndState(SDLApplication* app);
 	~EndState();
+
+	static void playButtonClicked(SDLApplication* app);
+	static void menuButtonClicked(SDLApplication* app);
 
 	void update();
 	void render();

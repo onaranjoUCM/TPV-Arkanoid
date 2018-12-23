@@ -9,7 +9,15 @@ SDLApplication::SDLApplication() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	
 	textures[0] = new Texture(renderer);
-	textures[0]->load("..\\images\\play.png", 1, 1);
+	textures[0]->load("..\\images\\play.png", 1, 1); // 0 para el boton play
+	textures[2] = new Texture(renderer);
+	textures[2]->load("..\\images\\quit.png", 1, 1); // 2 para el boton quit
+	textures[3] = new Texture(renderer);
+	textures[3]->load("..\\images\\pause.png", 1, 1); // 3 para el boton pausa
+	textures[4] = new Texture(renderer);
+	textures[4]->load("..\\images\\load.png", 1, 1); // 4 para el boton load
+	textures[5] = new Texture(renderer);
+	textures[5]->load("..\\images\\menu.png", 1, 1); // 5 para el boton menu
 	textures[1] = new Texture(renderer);
 	textures[1]->load("..\\images\\bricks.png", 1, 1);
 

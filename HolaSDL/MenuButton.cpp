@@ -4,7 +4,11 @@
 MenuButton::MenuButton(int X, int Y, int W, int H, Texture* t, SDLApplication* a, void (*callback)(SDLApplication* app)) :
 	texture(t), x(X), y(Y), w(W), h(H), app(a), cb(callback) {}
 
-MenuButton::~MenuButton() {}
+MenuButton::~MenuButton() {
+	CallBackOnClick* cb = nullptr;
+	delete app;
+	delete texture;
+}
 
 void MenuButton::render() {
 	SDL_Rect dstRect;
