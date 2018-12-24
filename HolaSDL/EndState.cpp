@@ -2,9 +2,9 @@
 #include "SDLApplication.h"
 
 EndState::EndState(SDLApplication* app) : GameState(app) {
-	playButton = new MenuButton(10, 500, 100, 50, app->getTexture(app->playText), app, playButtonClicked);
+	playButton = new MenuButton(100, 400, 100, 50, app->getTexture(app->playText), app, playButtonClicked);
 	stage.push_back(playButton);
-	menuButton = new MenuButton(500, 500, 100, 50, app->getTexture(app->menuText), app, playButtonClicked);
+	menuButton = new MenuButton(100, 500, 100, 50, app->getTexture(app->menuText), app, playButtonClicked);
 	stage.push_back(menuButton);
 }
 
@@ -14,26 +14,27 @@ EndState::~EndState(){
 };
 
 void EndState::playButtonClicked(SDLApplication* app) {
-	app->getStateMachine()->changeState(new PlayState(app));
+	app->getStateMachine()->popState();
 }
 
 void EndState::menuButtonClicked(SDLApplication* app) {
 	app->getStateMachine()->changeState(new MainMenuState(app));
 }
 
-void EndState::update() {
-	GameState::update();
-}
+//void EndState::update() {
+	//GameState::update();
+//}
 
 void EndState::render() {
-	//GameState::render();
+	playButton->render();
+	menuButton->render();
+
+	// imagen de fin del juego
+	SDL_Rect gameOverImag;
 	gameOverImag.x = 300;
-	gameOverImag.y = 50;
+	gameOverImag.y = 100;
+	gameOverImag.h = 100;
 	gameOverImag.h = 200;
-	gameOverImag.h = 200;
-	texture = app->getTexture(11);
-}
-
-void EndState::handleEvent() {
-
+	Texture* texture = app->getTexture(app->gameOverText);
+	texture->render(gameOverImag);
 }

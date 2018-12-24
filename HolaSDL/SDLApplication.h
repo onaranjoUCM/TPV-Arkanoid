@@ -22,7 +22,10 @@ public:
 		quitText,
 		pauseText,
 		loadText,
-		menuText
+		menuText,
+		gameOverText,
+		inMenuText,
+		titleText
 	};
 
 protected:
@@ -31,20 +34,20 @@ protected:
 
 	Texture* textures[NUM_TEXTURES];
 	const string textureNames[NUM_TEXTURES] = {
-		"..\\images\\bricks.png",
-		"..\\images\\rewards.png",
-		"..\\images\\side.png",
-		"..\\images\\topside.png",
-		"..\\images\\paddle.png",
-		"..\\images\\ball.png",
-		"..\\images\\play.png",
-		"..\\images\\quit.png",
-		"..\\images\\pause.png",
-		"..\\images\\load.png",
-		"..\\images\\menu.png",
-		"..\\images\\gameOver.png",
-		"..\\images\\menu.png",
-		"..\\images\\title.png"
+		"..\\images\\bricks.png", //0
+		"..\\images\\rewards.png", //1
+		"..\\images\\side.png", //2
+		"..\\images\\topside.png", //3
+		"..\\images\\paddle.png", //4
+		"..\\images\\ball.png", //5
+		"..\\images\\play.png", //6
+		"..\\images\\quit.png", //7
+		"..\\images\\pause.png", //8
+		"..\\images\\load.png", //9
+		"..\\images\\menu.png", //10
+		"..\\images\\gameOver.png", //11
+		"..\\images\\menu.png", //12
+		"..\\images\\title.png" //13
 	};
 
 	bool exit = false;

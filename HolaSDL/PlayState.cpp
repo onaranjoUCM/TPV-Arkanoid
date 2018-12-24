@@ -2,7 +2,7 @@
 #include "PauseState.h"
 #include "EndState.h"
 #include "SDLApplication.h"
-#include "Reward.h"
+#include <time.h> 
 
 PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
@@ -13,9 +13,13 @@ PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	paddle = new Paddle(WIN_WIDTH / 2 - app->getTexture(app->paddleText)->getW() / 2, WIN_HEIGHT - (WIN_HEIGHT / 10), app->getTexture(app->paddleText)->getW(), app->getTexture(app->paddleText)->getH(), app->getTexture(app->paddleText));
 	ball = new Ball(WIN_WIDTH / 2 - app->getTexture(app->ballText)->getW() / 10, WIN_HEIGHT - 100, app->getTexture(app->ballText)->getW() / 5, app->getTexture(app->ballText)->getH() / 5, ballSpeed, app->getTexture(app->ballText), this);
 	loadList();
+	srand(time(NULL));
 };
 
-PlayState::~PlayState() {}
+PlayState::~PlayState() {
+	for (auto objects : objects)
+		delete objects;
+}
 
 bool PlayState::handleEvents(SDL_Event& e) {
 	if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
@@ -63,18 +67,16 @@ void PlayState::nextLevel() {
 }
 
 void PlayState::createReward(int x, int y) {
-	/*
-	srand(time(NULL));
 	int random = rand() % 4;
-	list<ArkanoidObject*>::iterator it = objects.end();
-	Reward* r = new Reward(x, y, 50, 20, rewardTypes[random], Vector2D(0, 2), textures[rewardText], paddle, this, it);
-	objects.push_back(r);
-	*/
+	list<GameObject*>::iterator it = stage.end();
+	Reward* r = new Reward(x, y, 50, 20, rewardTypes[random], Vector2D(0, 2), app->getTexture(app->rewardText), paddle, this, it);
+	stage.push_back(r);
 	/*
 	auto itFR = objects.end();
 	if (firstReward == objects.end()) {
 		firstReward = itFR;
-	}*/
+	}
+	*/
 }
 
 void PlayState::ganaVida() {

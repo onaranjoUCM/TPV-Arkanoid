@@ -10,8 +10,6 @@ class EndState : public GameState {
 protected:
 	MenuButton* playButton;
 	MenuButton* menuButton;
-	SDL_Rect gameOverImag;
-	Texture* texture;
 public:
 	EndState(SDLApplication* app);
 	~EndState();
@@ -19,9 +17,9 @@ public:
 	static void playButtonClicked(SDLApplication* app);
 	static void menuButtonClicked(SDLApplication* app);
 
-	void update();
+	//void update();
 	void render();
-	void handleEvent();
+	//void handleEvent();
 };
 
 #endif

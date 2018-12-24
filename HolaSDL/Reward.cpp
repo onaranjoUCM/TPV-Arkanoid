@@ -1,12 +1,10 @@
 #include "Reward.h"
-//#include "Game.h"
+#include "PlayState.h"
 #include "checkML.h"
 
 using namespace std;
 
-void Reward::limpiar() {
-	game = nullptr;
-}
+void Reward::limpiar() { }
 
 void Reward::update() {
 	pos = pos + vel;
@@ -14,12 +12,12 @@ void Reward::update() {
 		spent = true;
 		doEffect();
 	}
-	//if (getY() > WIN_HEIGHT) {
-	//	game->deleteReward(this);
-	//}
+	if (getY() > 600) {	// CAMBIAR VALOR INMEDIATO
+		playState->deleteReward(this);
+	}
 }
 
-void Reward::handleEvents() { }
+bool Reward::handleEvent(SDL_Event& e) { return false; }
 
 void Reward::render() {
 	if (SDL_GetTicks() > lastAnimationTime + animationSpeed) {
@@ -36,7 +34,7 @@ void Reward::doEffect() {
 	paddle->resetW();
 	switch (rewardType) {
 	case 0:
-		//game->nextLevel();
+		playState->nextLevel();
 		break;
 	case 1:
 		paddle->expandW();
@@ -45,8 +43,8 @@ void Reward::doEffect() {
 		paddle->reduceW();
 		break;
 	case 4:
-		//game->ganaVida();
+		playState->ganaVida();
 		break;
 	}
-	//game->deleteReward(this);
+	playState->deleteReward(this);
 }

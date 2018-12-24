@@ -13,11 +13,17 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 
-// TAREAS (Apunta aquí si necesitas que se haga algo o si quieres preguntar algo)
+// TAREAS (Apunta aquï¿½ si necesitas que se haga algo o si quieres preguntar algo)
 
 // Implementar destructores correctamente
 // Implementar excepciones
-// Mejorar menús
+=======
+// Mejorar menï¿½s
 // Eliminar update y handleEvents vacios de todos los objetos que hereden de ArkanoidObject
 // Sustituir referencias a Game.h por PlayState.h o SDLApplication.h (actualmente comentadas)
 // Sustituir los void handleEvents de los objetos por bool handleEvent que se ajusten al virtual de GameObject
+// Aï¿½adir comentarios a cada funciï¿½n (salvo que sea trivial)
+// GameState::render() puede que de error al pasar de nivel
+// Cambiar valores inmediatos (Ctrl+F "inmediato" deberï¿½a encontrar la mayorï¿½a)
+// Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
+>>>>>>> d6af75ebeaa9b2d475a8d2293c429a88d13a7d5f

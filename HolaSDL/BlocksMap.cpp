@@ -214,18 +214,6 @@ int BlocksMap::getNumBlocks() {
 	return numBlocks;
 }
 
-int BlocksMap::getRows() {
-	return rows;
-}
-
-int BlocksMap::getCols() {
-	return cols;
-}
-
-Block*** BlocksMap::getCells() {
-	return cells;
-}
-
 void BlocksMap::limpiar() {
 	if (cells != nullptr) {
 		for (int r = 0; r < rows; r++) {
@@ -239,7 +227,3 @@ void BlocksMap::limpiar() {
 	}
 	rows = cols = 0;
 }
-
-void BlocksMap::update() { }
-
-void BlocksMap::handleEvents() { }

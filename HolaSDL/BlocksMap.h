@@ -22,10 +22,9 @@ public:
 	~BlocksMap() {
 		limpiar();
 	}
-	
-	void update();
-	void handleEvents();
+=======
 
+>>>>>>> d6af75ebeaa9b2d475a8d2293c429a88d13a7d5f
 	void render();
 	void load(const string& filename);
 	void loadFromFile(ifstream& file, PlayState* playState);
@@ -36,9 +35,6 @@ public:
 	void ballHitsBlock(Block* block);
 	bool checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, PlayState* playState);
 	int getNumBlocks();
-	int getRows();
-	int getCols();
-	Block*** getCells();
 };
 
 #endif
