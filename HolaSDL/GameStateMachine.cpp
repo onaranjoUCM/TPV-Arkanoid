@@ -3,7 +3,12 @@
 
 GameStateMachine::GameStateMachine() {}
 
-GameStateMachine::~GameStateMachine() {}
+GameStateMachine::~GameStateMachine() {
+	currentState = nullptr;
+	while (!stack.empty()) {
+		stack.pop();
+	}
+}
 
 void GameStateMachine::updateCurrentState() {
 	if (!stack.empty())

@@ -3,7 +3,10 @@
 
 GameState::GameState(SDLApplication* app) : app(app) {}
 
-GameState::~GameState() {}
+GameState::~GameState() {
+	app = nullptr;
+	stage.clear();
+}
 
 void GameState::render() {
 	/*

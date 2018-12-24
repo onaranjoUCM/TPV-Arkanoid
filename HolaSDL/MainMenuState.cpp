@@ -11,9 +11,7 @@ MainMenuState::MainMenuState(SDLApplication* app) : GameState(app) {
 };
 
 MainMenuState::~MainMenuState() {
-	delete playButton;
-	delete loadButton;
-	delete quitButton;
+	GameState::~GameState();
 }
 
 void MainMenuState::playButtonClicked(SDLApplication* app) {
@@ -21,17 +19,19 @@ void MainMenuState::playButtonClicked(SDLApplication* app) {
 }
 
 void MainMenuState::loadButtonClicked(SDLApplication* app) {
-
+	string loadCode;
+	cout << "Introduzca el codigo del fichero de guardado: " << endl;
+	cin >> loadCode;
+	loadCode = "..\\savedGames\\" + loadCode + ".txt";
+	app->getStateMachine()->changeState(new PlayState(app, loadCode));
 }
 
 void MainMenuState::quitButtonClicked(SDLApplication* app) {
-	app->~SDLApplication();
+	app->setExit(true);
 }
 
 void MainMenuState::render() {
-	playButton->render();
-	loadButton->render();
-	quitButton->render();
+	GameState::render();
 
 	// imagen de inicio
 	SDL_Rect titleImag;

@@ -26,11 +26,16 @@ SDLApplication::SDLApplication() {
 SDLApplication::~SDLApplication() {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
-
-	SDL_Window* window = nullptr;
-	SDL_Renderer* renderer = nullptr;
-	GameStateMachine* gsm = nullptr;
-
+	renderer = nullptr;
+	window = nullptr;
+	
+	delete stateMachine;
+	stateMachine = nullptr;
+	
+	for (int i = 0; i < NUM_TEXTURES; i++) {
+		delete textures[i];
+	}
+	
 	SDL_Quit();
 };
 
