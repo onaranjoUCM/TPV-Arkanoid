@@ -11,8 +11,6 @@ class PauseState : public GameState {
 protected:
 	MenuButton* playButton;
 	MenuButton* menuButton;
-	SDL_Rect pauseImag;
-	Texture* texture;
 public:
 	PauseState(SDLApplication* app);
 	~PauseState();

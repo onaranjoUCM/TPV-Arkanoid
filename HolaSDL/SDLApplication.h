@@ -6,7 +6,7 @@
 
 const int WIN_WIDTH = 800;
 const int WIN_HEIGHT = 600;
-const int NUM_TEXTURES = 14;
+const int NUM_TEXTURES = 13;
 const int FRAME_RATE = 10;
 
 class SDLApplication {
@@ -28,7 +28,6 @@ protected:
 		"..\\images\\load.png",
 		"..\\images\\menu.png",
 		"..\\images\\gameOver.png",
-		"..\\images\\menu.png",
 		"..\\images\\title.png"
 	};
 
@@ -60,6 +59,9 @@ public:
 		quitText,
 		pauseText,
 		loadText,
-		menuText
+		menuText,
+		gameOverText,
+		titleText
+		
 	};
 };

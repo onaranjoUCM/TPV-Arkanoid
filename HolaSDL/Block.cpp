@@ -3,10 +3,6 @@
 
 using namespace std;
 
-void Block::update() { }
-
-void Block::handleEvents() { }
-
 void Block::limpiar() {
 	color = row = col = 0;
 }

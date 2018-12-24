@@ -17,8 +17,11 @@ public:
 	MainMenuState(SDLApplication* app);
 	~MainMenuState();
 
+	void render();
+
 	static void playButtonClicked(SDLApplication* app);
 	static void quitButtonClicked(SDLApplication* app);
+	static void loadButtonClicked(SDLApplication* app);
 };
 
 #endif

@@ -61,7 +61,15 @@ PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 	}
 }
 
-PlayState::~PlayState() {}
+PlayState::~PlayState() {
+	delete sideWallLeft;
+	delete sideWallRight;
+	delete upperWall;
+	delete blocksMap;
+	delete paddle;
+	delete ball;
+	delete reward;
+}
 
 bool PlayState::handleEvents(SDL_Event& e) {
 	if (e.type == SDL_KEYDOWN && (e.key.keysym.sym == SDLK_ESCAPE || e.key.keysym.sym == SDLK_s)) {

@@ -21,8 +21,6 @@ class Block : public ArkanoidObject {
 		}
 		~Block() { limpiar(); }
 
-		void update();
-		void handleEvents();
 		void limpiar();
 		void render();
 		void setColor(int c);
