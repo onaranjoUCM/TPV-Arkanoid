@@ -8,11 +8,6 @@ EndState::EndState(SDLApplication* app) : GameState(app) {
 	stage.push_back(menuButton);
 }
 
-EndState::~EndState(){
-	delete playButton;
-	delete menuButton;
-};
-
 void EndState::playButtonClicked(SDLApplication* app) {
 	app->getStateMachine()->changeState(new PlayState(app));
 }

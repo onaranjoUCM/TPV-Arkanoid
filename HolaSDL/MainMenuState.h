@@ -15,7 +15,6 @@ protected:
 	MenuButton* quitButton;
 public:
 	MainMenuState(SDLApplication* app);
-	~MainMenuState();
 
 	void render();
 

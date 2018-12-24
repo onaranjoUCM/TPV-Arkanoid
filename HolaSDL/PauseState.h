@@ -13,7 +13,6 @@ protected:
 	MenuButton* menuButton;
 public:
 	PauseState(SDLApplication* app);
-	~PauseState();
 
 	static void playButtonClicked(SDLApplication* app);
 	static void menuButtonClicked(SDLApplication* app);

@@ -3,7 +3,12 @@
 
 GameState::GameState(SDLApplication* app) : app(app) {}
 
-GameState::~GameState() {}
+GameState::~GameState() {
+	for (auto object : stage)
+	{
+		delete object;
+	}
+}
 
 void GameState::render() {
 	/*

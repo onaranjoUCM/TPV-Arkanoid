@@ -10,12 +10,6 @@ MainMenuState::MainMenuState(SDLApplication* app) : GameState(app) {
 	stage.push_back(quitButton);
 };
 
-MainMenuState::~MainMenuState() {
-	delete playButton;
-	delete loadButton;
-	delete quitButton;
-}
-
 void MainMenuState::playButtonClicked(SDLApplication* app) {
 	app->getStateMachine()->changeState(new PlayState(app));
 }

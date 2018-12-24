@@ -61,15 +61,6 @@ PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 	}
 }
 
-PlayState::~PlayState() {
-	delete sideWallLeft;
-	delete sideWallRight;
-	delete upperWall;
-	delete blocksMap;
-	delete paddle;
-	delete ball;
-	delete reward;
-}
 
 void PlayState::update() {
 	if (win == false && gameOver == false) {

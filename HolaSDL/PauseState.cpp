@@ -8,10 +8,6 @@ PauseState::PauseState(SDLApplication* app) : GameState(app) {
 	stage.push_back(menuButton);
 };
 
-PauseState::~PauseState(){
-	delete playButton;
-	delete menuButton;
-}
 
 void PauseState::playButtonClicked(SDLApplication* app) {
 	app->getStateMachine()->popState();

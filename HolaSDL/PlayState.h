@@ -33,7 +33,6 @@ protected:
 public:
 	PlayState(SDLApplication* app);
 	PlayState(SDLApplication* app, string filename);
-	~PlayState();
 
 	bool handleEvents(SDL_Event& e);
 
