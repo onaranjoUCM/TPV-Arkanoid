@@ -71,17 +71,6 @@ PlayState::~PlayState() {
 	delete reward;
 }
 
-void PlayState::update() {
-	if (win == false && gameOver == false) {
-		GameState::update();
-	}
-
-	if (vidas == 0 && !gameOver) {
-		cout << "Has perdido!" << endl;
-		gameOver = true;
-	}
-}
-
 bool PlayState::handleEvents(SDL_Event& e) {
 	if (e.type == SDL_KEYDOWN && (e.key.keysym.sym == SDLK_ESCAPE || e.key.keysym.sym == SDLK_s)) {
 		if (e.key.keysym.sym == SDLK_ESCAPE) {
@@ -119,11 +108,11 @@ bool PlayState::collides(const SDL_Rect* rect, const Vector2D* vel, Vector2D& co
 
 void PlayState::nextLevel() {
 	if (nivelActual < 2) {
-		//delete blocksMap;
+		delete blocksMap;
 		ball->setPos(Vector2D(WIN_WIDTH / 2 - app->getTexture(app->ballText)->getW() / 10, WIN_HEIGHT - 100));
 		ball->setVel(ballSpeed);
 		nivelActual++;
-		//blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
+		blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
 		blocksMap->load(niveles[nivelActual]);
 	}
 	else {

@@ -38,7 +38,7 @@ public:
 	bool handleEvents(SDL_Event& e);
 
 	bool collides(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector);
-	void update();
+	//void update();	// Implementar y llamar al padre
 	void pierdeVida();
 	void nextLevel();
 	void loadList();

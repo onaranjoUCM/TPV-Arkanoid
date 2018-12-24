@@ -17,8 +17,12 @@ int main(int argc, char* argv[]){
 
 // Implementar destructores correctamente
 // Implementar excepciones
+// Mejorar menús
+// Eliminar update y handleEvents vacios de todos los objetos que hereden de ArkanoidObject
+// Sustituir referencias a Game.h por PlayState.h o SDLApplication.h (actualmente comentadas)
+// Sustituir los void handleEvents de los objetos por bool handleEvent que se ajusten al virtual de GameObject
 // Añadir comentarios a cada función (salvo que sea trivial)
+// GameState::render() puede que de error al pasar de nivel
 // Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
-// Controlar si se introduce un nombre de fichero inexistente
-// loadFromFile no esta correctamente implementado aun
+// El reward de extender pala no funciona correctamente (posiblemente el resto tampoco)
