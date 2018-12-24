@@ -7,25 +7,25 @@
 #include "Texture.h"
 #include <list>
 
-class Game;
+class PlayState;
 class Reward : public MovingObject {
 private:
 	int rewardType;
 	Paddle* paddle;
 	bool spent = false;
-	Game* game;
-	list<ArkanoidObject*>::iterator indVector;	// NUEVO
+	PlayState* playState;
+	list<GameObject*>::iterator indVector;	// NUEVO
 
 	int animationSpeed = 200;
 	int animationFrame = 0;
 	int lastAnimationTime;
 public:
 	Reward() {}
-	Reward(int x, int y, int w, int h, int rt, Vector2D v, Texture* t, Paddle* p, Game* g, list<ArkanoidObject*>::iterator i) :
+	Reward(int x, int y, int w, int h, int rt, Vector2D v, Texture* t, Paddle* p, PlayState* ps, list<GameObject*>::iterator i) :
 		MovingObject(x, y, w, h, v, t) {
 		rewardType = rt;
 		paddle = p;
-		game = g;
+		playState = ps;
 		lastAnimationTime = SDL_GetTicks();
 		indVector = i;
 	}
@@ -34,7 +34,7 @@ public:
 
 	void render();
 	void update();
-	void handleEvents();
+	bool handleEvent(SDL_Event& e);
 	void doEffect();
 };
 

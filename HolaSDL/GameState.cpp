@@ -6,8 +6,14 @@ GameState::GameState(SDLApplication* app) : app(app) {}
 GameState::~GameState() {}
 
 void GameState::render() {
+	/*
 	for (list<GameObject*>::iterator it = stage.begin(); it != stage.end();) {
 		((*it++))->render();
+	}
+	*/
+	for (auto object : stage)
+	{
+		object->render();
 	}
 }
 
