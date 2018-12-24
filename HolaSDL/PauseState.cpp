@@ -11,6 +11,7 @@ PauseState::PauseState(SDLApplication* app) : GameState(app) {
 PauseState::~PauseState(){
 	delete playButton;
 	delete menuButton;
+	delete texture;
 }
 
 void PauseState::playButtonClicked(SDLApplication* app) {
@@ -19,4 +20,12 @@ void PauseState::playButtonClicked(SDLApplication* app) {
 
 void PauseState::menuButtonClicked(SDLApplication* app) {
 	app->getStateMachine()->changeState(new MainMenuState(app));
+}
+
+void PauseState::render() {
+	pauseImag.x = 100;
+	pauseImag.y = 100;
+	pauseImag.h = 200;
+	pauseImag.w = 200;
+	texture = app->getTexture(8);
 }

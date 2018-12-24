@@ -1,6 +1,8 @@
 #include "PlayState.h"
 #include "PauseState.h"
+#include "EndState.h"
 #include "SDLApplication.h"
+#include "Reward.h"
 
 PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
@@ -48,10 +50,10 @@ bool PlayState::collides(const SDL_Rect* rect, const Vector2D* vel, Vector2D& co
 void PlayState::nextLevel() {
 	if (nivelActual < 2) {
 		delete blocksMap;
-		ball->setPos(Vector2D(WIN_WIDTH / 2 - app->getTexture[app->ballText]->getW() / 10, WIN_HEIGHT - 100));
+		ball->setPos(Vector2D(WIN_WIDTH / 2 - app->getTexture(app->ballText)->getW() / 10, WIN_HEIGHT - 100));
 		ball->setVel(ballSpeed);
 		nivelActual++;
-		blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture[app->blocksText]);
+		blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
 		blocksMap->load(niveles[nivelActual]);
 	}
 	else {
@@ -67,12 +69,12 @@ void PlayState::createReward(int x, int y) {
 	list<ArkanoidObject*>::iterator it = objects.end();
 	Reward* r = new Reward(x, y, 50, 20, rewardTypes[random], Vector2D(0, 2), textures[rewardText], paddle, this, it);
 	objects.push_back(r);
+	*/
 	/*
 	auto itFR = objects.end();
 	if (firstReward == objects.end()) {
 		firstReward = itFR;
-	}
-	*/
+	}*/
 }
 
 void PlayState::ganaVida() {

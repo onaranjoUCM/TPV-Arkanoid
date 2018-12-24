@@ -15,15 +15,15 @@
 
 class PlayState : public GameState {
 protected:
-	//list<ArkanoidObject*> objects;
+	list<ArkanoidObject*> objects;
 	Wall* sideWallLeft = nullptr;
 	Wall* sideWallRight = nullptr;
 	Wall* upperWall = nullptr;
 	BlocksMap* blocksMap = nullptr;
 	Paddle* paddle = nullptr;
 	Ball* ball = nullptr;
-	//Reward* reward = nullptr;
-
+	Reward* reward = nullptr;
+	
 	bool gameOver = false;
 	bool win = false;
 	int vidas = 3;

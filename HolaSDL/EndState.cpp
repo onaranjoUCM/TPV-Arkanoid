@@ -26,7 +26,12 @@ void EndState::update() {
 }
 
 void EndState::render() {
-	GameState::render();
+	//GameState::render();
+	gameOverImag.x = 300;
+	gameOverImag.y = 50;
+	gameOverImag.h = 200;
+	gameOverImag.h = 200;
+	texture = app->getTexture(11);
 }
 
 void EndState::handleEvent() {
