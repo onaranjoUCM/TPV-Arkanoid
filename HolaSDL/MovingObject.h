@@ -14,7 +14,7 @@ public:
 		ArkanoidObject(x, y, w, h, t) {
 		vel = v;
 	}
-	~MovingObject() { }
+	virtual ~MovingObject() {}
 
 	virtual void update() = 0;
 	virtual bool handleEvent(SDL_Event& e) = 0;

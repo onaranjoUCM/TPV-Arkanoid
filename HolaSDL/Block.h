@@ -19,9 +19,8 @@ class Block : public ArkanoidObject {
 			row = r;
 			col = c;
 		}
-		~Block() { limpiar(); }
+		~Block() {}
 
-		void limpiar();
 		void render();
 		void setColor(int c);
 		int getR();

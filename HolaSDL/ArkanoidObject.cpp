@@ -4,6 +4,10 @@
 
 using namespace std;
 
+ArkanoidObject::~ArkanoidObject() {
+	texture = nullptr;
+}
+
 void ArkanoidObject::loadFromFile(ifstream& file, SDLApplication* game) {
 	int x, y, width, height;
 	file >> x >> y >> width >> height;
@@ -17,10 +21,6 @@ void ArkanoidObject::saveToFile(ofstream& outfile) {
 	outfile << pos.getY() << " ";
 	outfile << w << " ";
 	outfile << h << endl;
-}
-
-void ArkanoidObject::limpiar() {
-
 }
 
 void ArkanoidObject::render() {

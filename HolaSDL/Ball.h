@@ -20,8 +20,7 @@ public:
 		posIni = Vector2D(x, y);
 		velIni = v;
 	}
-	~Ball() { limpiar(); }
-	void limpiar();
+	~Ball();
 
 	void update();
 	bool handleEvent(SDL_Event& e) { return false; };

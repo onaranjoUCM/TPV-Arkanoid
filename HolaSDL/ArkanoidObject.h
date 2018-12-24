@@ -16,8 +16,7 @@ public:
 	ArkanoidObject(int x, int y, int w, int h, Texture* t) :
 		pos(x, y), w(w), h(h), texture(t) {}
 
-	~ArkanoidObject() { limpiar(); }
-	void limpiar();
+	virtual ~ArkanoidObject();
 
 	virtual void loadFromFile(ifstream& file, SDLApplication* game);
 	virtual void saveToFile(ofstream& outfile);

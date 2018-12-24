@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void Ball::limpiar() {
+Ball::~Ball() {
 	playState = nullptr;
 }
 

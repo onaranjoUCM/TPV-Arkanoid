@@ -3,10 +3,6 @@
 
 using namespace std;
 
-void Paddle::limpiar() {
-	
-}
-
 void Paddle::expandW() {
 	w = w + (w / 2);
 }

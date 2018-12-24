@@ -16,8 +16,7 @@ public:
 		MovingObject(x, y, w, h, Vector2D(0,0), t) {
 		wIni = w;
 	}
-	~Paddle() {  limpiar();  }
-	void limpiar();
+	~Paddle() { }
 
 	void update();
 	bool handleEvent(SDL_Event& e);

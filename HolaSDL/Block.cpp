@@ -3,10 +3,6 @@
 
 using namespace std;
 
-void Block::limpiar() {
-	color = row = col = 0;
-}
-
 // Renderiza el bloque con un fragmento de la textura dependiendo del color
 void Block::render() {
 	int row, col;

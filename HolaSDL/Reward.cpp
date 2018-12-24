@@ -4,7 +4,10 @@
 
 using namespace std;
 
-void Reward::limpiar() { }
+Reward::~Reward() {
+	paddle = nullptr;
+	playState = nullptr;
+}
 
 void Reward::update() {
 	pos = pos + vel;

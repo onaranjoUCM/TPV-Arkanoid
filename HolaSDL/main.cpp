@@ -15,10 +15,10 @@ int main(int argc, char* argv[]){
 
 // TAREAS (Apunta aquí si necesitas que se haga algo o si quieres preguntar algo)
 
-// Implementar destructores correctamente
 // Implementar excepciones
 // Añadir comentarios a cada función (salvo que sea trivial)
 // Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
 // Controlar si se introduce un nombre de fichero inexistente
 // loadFromFile no esta correctamente implementado aun
+// Mejorar funcionamiento de los rewards

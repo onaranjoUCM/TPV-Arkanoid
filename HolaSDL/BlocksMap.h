@@ -19,9 +19,7 @@ public:
 	BlocksMap(int w, int h, Texture* t) :
 		ArkanoidObject(0, 0, w, h, t) {}
 
-	~BlocksMap() {
-		limpiar();
-	}
+	~BlocksMap() { limpiar(); }
 
 	void render();
 	void load(const string& filename);

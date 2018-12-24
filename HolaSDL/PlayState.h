@@ -3,7 +3,6 @@
 
 #include "GameState.h"
 #include "ArkanoidObject.h"
-//#include "SDL_image.h"
 #include "BlocksMap.h"
 #include "Wall.h"
 #include "Paddle.h"
@@ -11,7 +10,6 @@
 #include "Reward.h"
 #include "checkML.h"
 #include <list>
-//#include <iostream>
 
 class PlayState : public GameState {
 protected:

@@ -223,7 +223,6 @@ void BlocksMap::limpiar() {
 		delete[] cells;
 		cells = nullptr;
 	}
-	rows = cols = 0;
 }
 
 int BlocksMap::getRows() {

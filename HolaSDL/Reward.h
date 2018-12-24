@@ -29,8 +29,7 @@ public:
 		lastAnimationTime = SDL_GetTicks();
 		indVector = i;
 	}
-	~Reward() { limpiar(); }
-	void limpiar();
+	~Reward();
 
 	void render();
 	void update();
