@@ -25,3 +25,4 @@ int main(int argc, char* argv[]){
 // GameState::render() puede que de error al pasar de nivel
 // Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
+// El reward de extender pala no funciona correctamente (posiblemente el resto tampoco)

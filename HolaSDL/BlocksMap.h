@@ -32,6 +32,10 @@ public:
 	Block* blockAt(const Vector2D& p);
 	void ballHitsBlock(Block* block);
 	bool checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, PlayState* playState);
+	
+	int getRows();
+	int getCols();
+	Block*** getCells();
 	int getNumBlocks();
 };
 

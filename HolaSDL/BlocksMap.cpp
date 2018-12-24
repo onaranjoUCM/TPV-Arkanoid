@@ -81,7 +81,6 @@ void BlocksMap::loadFromFile(ifstream& file, PlayState* game) {
 }
 
 void BlocksMap::saveToFile(ofstream& outfile) {
-	/*
 	ArkanoidObject::saveToFile(outfile);
 
 	for (int r = 0; r < rows; r++) {
@@ -95,7 +94,6 @@ void BlocksMap::saveToFile(ofstream& outfile) {
 		outfile << endl;
 	}
 	outfile << endl;
-	*/
 }
 
 bool BlocksMap::checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, PlayState* playState) {
@@ -226,4 +224,16 @@ void BlocksMap::limpiar() {
 		cells = nullptr;
 	}
 	rows = cols = 0;
+}
+
+int BlocksMap::getRows() {
+	return rows;
+}
+
+int BlocksMap::getCols() {
+	return cols;
+}
+
+Block*** BlocksMap::getCells() {
+	return cells;
 }

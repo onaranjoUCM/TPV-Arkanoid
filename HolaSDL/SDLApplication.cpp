@@ -79,3 +79,7 @@ GameStateMachine* SDLApplication::getStateMachine() {
 Texture* SDLApplication::getTexture(int i) {
 	return textures[i];
 }
+
+void SDLApplication::setExit(bool e) {
+	exit = e;
+}

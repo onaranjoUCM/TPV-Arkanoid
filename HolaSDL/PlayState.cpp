@@ -3,6 +3,7 @@
 #include "EndState.h"
 #include "SDLApplication.h"
 #include <time.h> 
+#include <fstream> 
 
 PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
@@ -16,11 +17,60 @@ PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	srand(time(NULL));
 };
 
+PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
+	ifstream file;
+	if (file.fail()) {
+		throw "Error loading blocks map from " + filename;
+	}
+	else {
+		float x, y, w, h, vx, vy, color;
+		file.open(filename);
+
+		file >> vidas;
+		file >> nivelActual;
+
+		file >> x >> y >> w >> h;
+		blocksMap = new BlocksMap(w, h, app->getTexture(app->blocksText));
+		blocksMap->load(niveles[nivelActual]);
+		for (int r = 0; r < blocksMap->getRows(); r++) {
+			for (int c = 0; c < blocksMap->getCols(); c++) {
+				file >> color;
+				Block* block = blocksMap->getCells()[r][c];
+				if (block != nullptr) {
+					block->setColor(color);
+					if (color == 0) {
+						blocksMap->ballHitsBlock(block);
+					}
+				}
+			}
+		}
+
+		file >> vx >> vy >> x >> y >> w >> h;
+		paddle = new Paddle(x, y, w, h, app->getTexture(app->paddleText));
+		file >> vx >> vy >> x >> y >> w >> h;
+		ball = new Ball(x, y, w, h, Vector2D(vx, vy), app->getTexture(app->ballText), this);
+		file >> x >> y >> w >> h;
+		sideWallLeft = new Wall("left", x, y, w, h, app->getTexture(app->sideWallText));
+		file >> x >> y >> w >> h;
+		sideWallRight = new Wall("right", x, y, w, h, app->getTexture(app->sideWallText));
+		file >> x >> y >> w >> h;
+		upperWall = new Wall("top", x, y, w, h, app->getTexture(app->upperWallText));
+		loadList();
+
+		file.close();
+	}
+}
+
 PlayState::~PlayState() {}
 
 bool PlayState::handleEvents(SDL_Event& e) {
-	if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
-		app->getStateMachine()->pushState(new PauseState(app));
+	if (e.type == SDL_KEYDOWN && (e.key.keysym.sym == SDLK_ESCAPE || e.key.keysym.sym == SDLK_s)) {
+		if (e.key.keysym.sym == SDLK_ESCAPE) {
+			app->getStateMachine()->pushState(new PauseState(app));
+		}
+		if (e.key.keysym.sym == SDLK_s) {
+			saveGame();
+		}
 	}
 	else {
 		GameState::handleEvents(e);
@@ -92,7 +142,23 @@ void PlayState::deleteReward(Reward* r) {
 	}
 }
 
-void PlayState::saveGame() {}
+void PlayState::saveGame() {
+	app->setExit(true);
+	cout << "Escribe el nombre del fichero donde guardar la partida:" << endl;
+	string filename;
+	cin >> filename;
+	filename = "..\\savedGames\\" + filename + ".txt";
+
+	ofstream outfile(filename, ofstream::trunc);
+	outfile << vidas << " ";
+	outfile << nivelActual << endl;
+	for (auto object : stage)
+	{
+		ArkanoidObject* a = static_cast<ArkanoidObject*>(object);
+		a->saveToFile(outfile);
+	}
+	outfile.close();
+}
 
 string PlayState::getNivelActual() {
 	return niveles[nivelActual];

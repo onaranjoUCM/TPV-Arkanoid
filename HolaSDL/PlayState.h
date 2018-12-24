@@ -15,7 +15,6 @@
 
 class PlayState : public GameState {
 protected:
-	list<ArkanoidObject*> objects;
 	Wall* sideWallLeft = nullptr;
 	Wall* sideWallRight = nullptr;
 	Wall* upperWall = nullptr;
@@ -33,6 +32,7 @@ protected:
 	string niveles[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
 public:
 	PlayState(SDLApplication* app);
+	PlayState(SDLApplication* app, string filename);
 	~PlayState();
 
 	bool handleEvents(SDL_Event& e);

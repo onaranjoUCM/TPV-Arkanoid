@@ -10,21 +10,6 @@ const int NUM_TEXTURES = 14;
 const int FRAME_RATE = 10;
 
 class SDLApplication {
-public:
-	const enum textureName {
-		blocksText,
-		rewardText,
-		sideWallText,
-		upperWallText,
-		paddleText,
-		ballText,
-		playText,
-		quitText,
-		pauseText,
-		loadText,
-		menuText
-	};
-
 protected:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
@@ -62,4 +47,19 @@ public:
 
 	GameStateMachine* getStateMachine();
 	Texture* getTexture(int i);
+	void setExit(bool e);
+
+	const enum textureName {
+		blocksText,
+		rewardText,
+		sideWallText,
+		upperWallText,
+		paddleText,
+		ballText,
+		playText,
+		quitText,
+		pauseText,
+		loadText,
+		menuText
+	};
 };
