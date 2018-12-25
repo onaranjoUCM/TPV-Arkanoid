@@ -35,6 +35,8 @@ public:
 	void update();
 	bool handleEvent(SDL_Event& e);
 	void doEffect();
+
+	list<GameObject*>::iterator getIndvector();
 };
 
 #endif

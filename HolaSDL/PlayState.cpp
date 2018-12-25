@@ -61,7 +61,6 @@ PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 	}
 }
 
-
 void PlayState::update() {
 	if (win == false && gameOver == false) {
 		GameState::update();
@@ -127,15 +126,9 @@ void PlayState::nextLevel() {
 
 void PlayState::createReward(int x, int y) {
 	int random = rand() % 4;
-	list<GameObject*>::iterator it = stage.end();
-	Reward* r = new Reward(x, y, 50, 20, rewardTypes[random], Vector2D(0, 2), app->getTexture(app->rewardText), paddle, this, it);
+	list<GameObject*>::iterator it = --stage.end();
+	Reward* r = new Reward(x, y, 50, 20, random, Vector2D(0, 2), app->getTexture(app->rewardText), paddle, this, it);
 	stage.push_back(r);
-	/*
-	auto itFR = objects.end();
-	if (firstReward == objects.end()) {
-		firstReward = itFR;
-	}
-	*/
 }
 
 void PlayState::ganaVida() {
@@ -144,14 +137,7 @@ void PlayState::ganaVida() {
 }
 
 void PlayState::deleteReward(Reward* r) {
-	// PENDIENTE DE MEJORA
-	for (list<GameObject*>::iterator it = stage.begin(); it != stage.end(); ++it) {
-		if ((*it) == r) {
-			delete r;
-			stage.erase(it);
-			break;
-		}
-	}
+	stage.erase(++r->getIndvector());
 }
 
 void PlayState::saveGame() {

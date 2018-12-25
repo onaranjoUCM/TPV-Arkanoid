@@ -42,12 +42,16 @@ void Reward::doEffect() {
 	case 1:
 		paddle->expandW();
 		break;
-	case 3:
+	case 2:
 		paddle->reduceW();
 		break;
-	case 4:
+	case 3:
 		playState->ganaVida();
 		break;
 	}
 	playState->deleteReward(this);
+}
+
+list<GameObject*>::iterator Reward::getIndvector() {
+	return indVector;
 }

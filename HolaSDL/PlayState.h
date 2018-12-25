@@ -19,13 +19,12 @@ protected:
 	BlocksMap* blocksMap = nullptr;
 	Paddle* paddle = nullptr;
 	Ball* ball = nullptr;
-	Reward* reward = nullptr;
+	Reward* firstReward = nullptr;
 	
 	bool gameOver = false;
 	bool win = false;
 	int vidas = 3;
 	int nivelActual = 0;
-	int rewardTypes[4] = { 0, 1, 3, 4 };	// CAMBIAR
 	Vector2D ballSpeed = Vector2D(2, -2);
 	string niveles[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
 public:
