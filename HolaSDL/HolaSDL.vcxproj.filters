@@ -31,6 +31,9 @@
     <Filter Include="Archivos de encabezado\Resources">
       <UniqueIdentifier>{15050cd1-4e88-4657-acab-df7ee0ba73fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Exceptions">
+      <UniqueIdentifier>{30834407-ab64-4a6d-bbc3-2e29342d5cd8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -151,6 +154,18 @@
     </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ArkanoidError.h">
+      <Filter>Archivos de encabezado\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFormatError.h">
+      <Filter>Archivos de encabezado\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="FileNotFoundError.h">
+      <Filter>Archivos de encabezado\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="SDLError.h">
+      <Filter>Archivos de encabezado\Exceptions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include "MainMenuState.h"
 #include "SDL_image.h"
 #include "Texture.h"
+#include "SDLError.h"
 #include <iostream>
 
 const int WIN_WIDTH = 800;

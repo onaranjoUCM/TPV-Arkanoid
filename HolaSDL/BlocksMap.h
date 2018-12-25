@@ -4,6 +4,7 @@
 #include "Block.h"
 #include "ArkanoidObject.h"
 #include "checkML.h"
+#include "FileFormatError.h"
 
 class PlayState;
 class BlocksMap : public ArkanoidObject {

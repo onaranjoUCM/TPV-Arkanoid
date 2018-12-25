@@ -1,6 +1,8 @@
 #include "SDLApplication.h"
 
 SDLApplication::SDLApplication() {
+	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
+		throw new SDLError("Error initializing SDL");
 	// INITIALIZE SDL
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -48,7 +50,7 @@ void SDLApplication::run() {
 
 void SDLApplication::render() {
 	if (window == nullptr || renderer == nullptr)
-		cout << "Error cargando SDL" << endl;
+		throw new SDLError("Error loading the SDL window and/or renderer");
 	else {
 		SDL_RenderClear(renderer);
 		stateMachine->getCurrentState()->render();
