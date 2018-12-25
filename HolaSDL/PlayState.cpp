@@ -69,6 +69,7 @@ void PlayState::update() {
 
 	if (vidas == 0 && !gameOver) {
 		cout << "Has perdido!" << endl;
+		app->getStateMachine()->changeState(new EndState(app));
 		gameOver = true;
 	}
 }
@@ -119,6 +120,7 @@ void PlayState::nextLevel() {
 	}
 	else {
 		win = true;
+		app->getStateMachine()->changeState(new EndState(app));
 		cout << "Has ganado!";
 	}
 }

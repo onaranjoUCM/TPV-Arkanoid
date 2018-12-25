@@ -28,7 +28,7 @@ protected:
 		"..\\images\\load.png",
 		"..\\images\\menu.png",
 		"..\\images\\gameOver.png",
-		"..\\images\\title.png"
+		"..\\images\\altTitle.png"
 	};
 
 	bool exit = false;
