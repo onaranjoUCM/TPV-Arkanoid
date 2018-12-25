@@ -19,6 +19,5 @@ int main(int argc, char* argv[]){
 // Añadir comentarios a cada función (salvo que sea trivial)
 // Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
-// Controlar si se introduce un nombre de fichero inexistente
 // loadFromFile no esta correctamente implementado aun
-// Mejorar funcionamiento de los rewards
+// Corregir error cuando hay mas de un reward

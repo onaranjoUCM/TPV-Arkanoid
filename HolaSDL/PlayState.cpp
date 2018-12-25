@@ -18,13 +18,12 @@ PlayState::PlayState(SDLApplication* app) : GameState(app) {
 };
 
 PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
-	ifstream file;
+	ifstream file(filename);
 	if (file.fail()) {
-		throw "Error loading blocks map from " + filename;
-	}
-	else {
+		cout << "Error cargando el archivo " << filename << endl;
+		//throw "Error loading blocks map from " + filename;
+	} else {
 		float x, y, w, h, vx, vy, color;
-		file.open(filename);
 
 		file >> vidas;
 		file >> nivelActual;
@@ -56,6 +55,7 @@ PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 		file >> x >> y >> w >> h;
 		upperWall = new Wall("top", x, y, w, h, app->getTexture(app->upperWallText));
 		loadList();
+		srand(time(NULL));
 
 		file.close();
 	}

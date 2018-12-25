@@ -100,7 +100,6 @@ bool BlocksMap::checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector
 	if (SDL_HasIntersection(rect, &getRect())) {
 		Block* block = collides(rect, vel, collVector);
 		if (block != nullptr) {
-			srand(time(NULL));
 			if (rand() % 5 == 0) {
 				playState->createReward(block->getX(), block->getY());
 			}
