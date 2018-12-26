@@ -4,5 +4,6 @@
 #include <SDL.h>
 
 class FileFormatError : public ArkanoidError {
-	FileFormatError(const string &stringLine) : ArkanoidError("Error in the file format: " + stringLine) {}
+public:
+	FileFormatError(const string &stringLine) : ArkanoidError("Error" + stringLine) {}
 };

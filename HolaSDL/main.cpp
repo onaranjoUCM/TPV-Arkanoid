@@ -17,7 +17,8 @@ int main(int argc, char* argv[]){
 
 // Implementar excepciones
 // Añadir comentarios a cada función (salvo que sea trivial)
-// Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
+// Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría) -> Esto que es? xd
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
 // loadFromFile no esta correctamente implementado aun
-// Corregir error cuando hay mas de un reward
+// Corregir error cuando hay mas de un reward (tambien ocurre ese error
+// al haber un reward del nivel anterior, que hace que el juego muera)

@@ -20,9 +20,10 @@ void BlocksMap::render() {
 // Crea el array doble de bloques y lo rellena según un fichero de configuración
 void BlocksMap::load(const string& filename) {
 	ifstream file;
+	bool loaded = false;
 	bool firstBlockFound = false;
 	if (file.fail()) {
-		//throw new FileFormatError(&filename); //error incomprendible por la humanidad
+		throw new FileFormatError(filename); //error incomprendible por la humanidad
 	} else {
 		file.open(filename);
 		file >> rows;
