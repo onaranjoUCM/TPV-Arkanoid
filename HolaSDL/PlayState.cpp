@@ -137,7 +137,7 @@ void PlayState::ganaVida() {
 }
 
 void PlayState::deleteReward(Reward* r) {
-	stage.erase(++r->getIndvector());
+	stage.erase((++r)->getIndvector());
 }
 
 void PlayState::saveGame() {

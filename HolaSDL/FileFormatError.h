@@ -5,5 +5,5 @@
 
 class FileFormatError : public ArkanoidError {
 public:
-	FileFormatError(const string &stringLine) : ArkanoidError("Error" + stringLine) {}
+	FileFormatError(string s) : ArkanoidError("Error" + s) {}
 };
