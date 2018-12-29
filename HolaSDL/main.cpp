@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
 
 // TAREAS (Apunta aquí si necesitas que se haga algo o si quieres preguntar algo)
 
-// Implementar excepciones
+// Implementar excepciones (creo que eso ya esta)
 // Añadir comentarios a cada función (salvo que sea trivial)
 // Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría) -> Esto que es? xd
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos

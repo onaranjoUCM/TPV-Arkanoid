@@ -2,6 +2,7 @@
 #define GameObjectH
 
 #include "SDL.h"
+#include "checkML.h"
 
 class SDLApplication;
 class GameObject {
