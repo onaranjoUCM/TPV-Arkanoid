@@ -13,12 +13,13 @@ int main(int argc, char* argv[]){
 	return 0;
 }
 
-// TAREAS (Apunta aquí si necesitas que se haga algo o si quieres preguntar algo)
+// TAREAS
 
-// Implementar excepciones (creo que eso ya esta)
+// Implementar excepciones
+	//creo que eso ya esta
 // Añadir comentarios a cada función (salvo que sea trivial)
-// Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría) -> Esto que es? xd
+// Cambiar valores inmediatos (Ctrl+F "inmediato" debería encontrar la mayoría)
+	//Esto que es?
+		//Por ejemplo, donde pone 800 en lugar de WIN_WIDTH (normalmente porque no tiene acceso a él, lo que hay que hacer es dárselo de la forma adecuada)
 // Revisar cadena de update/handleEvent de arkanoidObject, movingObject e hijos
 // loadFromFile no esta correctamente implementado aun
-// Corregir error cuando hay mas de un reward (tambien ocurre ese error
-// al haber un reward del nivel anterior, que hace que el juego muera)

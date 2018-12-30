@@ -21,6 +21,7 @@ PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 	ifstream file(filename);
 	if (file.fail()) {
 		cout << "Error cargando el archivo " << filename << endl;
+		throw new FileFormatError(filename);
 		//throw "Error loading blocks map from " + filename;
 	} else {
 		float x, y, w, h, vx, vy, color;
@@ -95,6 +96,7 @@ void PlayState::loadList() {
 	stage.push_back(sideWallLeft);
 	stage.push_back(sideWallRight);
 	stage.push_back(upperWall);
+	nObjects = stage.size();
 }
 
 // Comprueba si el objeto pasado por parámetro colisiona con otro objeto del juego
@@ -137,7 +139,12 @@ void PlayState::ganaVida() {
 }
 
 void PlayState::deleteReward(Reward* r) {
-	stage.erase((++r)->getIndvector());
+	list<GameObject*>::iterator it = stage.erase(++r->getIndvector());
+	if (it != stage.end()) {
+		Reward* reward = static_cast<Reward*>(((*it)));
+		reward->setIndvector(--it);
+	}
+	delete r;
 }
 
 void PlayState::saveGame() {

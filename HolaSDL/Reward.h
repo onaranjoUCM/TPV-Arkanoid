@@ -37,6 +37,7 @@ public:
 	void doEffect();
 
 	list<GameObject*>::iterator getIndvector();
+	void setIndvector(list<GameObject*>::iterator it);
 };
 
 #endif

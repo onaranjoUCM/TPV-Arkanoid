@@ -55,3 +55,7 @@ void Reward::doEffect() {
 list<GameObject*>::iterator Reward::getIndvector() {
 	return indVector;
 }
+
+void Reward::setIndvector(list<GameObject*>::iterator it) {
+	indVector = it;
+}

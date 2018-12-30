@@ -23,7 +23,7 @@ void BlocksMap::load(const string& filename) {
 	bool loaded = false;
 	bool firstBlockFound = false;
 	if (file.fail()) {
-		throw new FileFormatError(filename); //error incomprendible por la humanidad
+		throw new FileFormatError(filename);
 	} else {
 		file.open(filename);
 		file >> rows;
