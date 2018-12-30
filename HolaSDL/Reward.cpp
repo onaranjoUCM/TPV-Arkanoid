@@ -33,6 +33,7 @@ void Reward::render() {
 	renderFrame(rewardType, animationFrame);
 }
 
+// Provoca un efecto distinto dependiendo de su tipo
 void Reward::doEffect() {
 	paddle->resetW();
 	switch (rewardType) {

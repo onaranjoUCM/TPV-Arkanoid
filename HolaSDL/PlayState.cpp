@@ -5,6 +5,7 @@
 #include <time.h> 
 #include <fstream> 
 
+// Constructor normal
 PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	blocksMap = new BlocksMap(WIN_WIDTH - 200, WIN_HEIGHT / 2, app->getTexture(app->blocksText));
 	blocksMap->load(niveles[nivelActual]);
@@ -17,6 +18,7 @@ PlayState::PlayState(SDLApplication* app) : GameState(app) {
 	srand(time(NULL));
 };
 
+// Constructor con carga desde fichero (PENDIENTE DE MEJORA/ELIMINACION)
 PlayState::PlayState(SDLApplication* app, string filename) : GameState(app) {
 	ifstream file(filename);
 	if (file.fail()) {
@@ -89,6 +91,7 @@ bool PlayState::handleEvents(SDL_Event& e) {
 	return true;
 }
 
+// Carga la lista de objetos del nivel
 void PlayState::loadList() {
 	stage.push_back(blocksMap);
 	stage.push_back(paddle);
@@ -96,7 +99,6 @@ void PlayState::loadList() {
 	stage.push_back(sideWallLeft);
 	stage.push_back(sideWallRight);
 	stage.push_back(upperWall);
-	nObjects = stage.size();
 }
 
 // Comprueba si el objeto pasado por parámetro colisiona con otro objeto del juego
@@ -133,11 +135,6 @@ void PlayState::createReward(int x, int y) {
 	stage.push_back(r);
 }
 
-void PlayState::ganaVida() {
-	vidas++;
-	cout << "Vidas: " << vidas << endl;
-}
-
 void PlayState::deleteReward(Reward* r) {
 	list<GameObject*>::iterator it = stage.erase(++r->getIndvector());
 	if (it != stage.end()) {
@@ -145,6 +142,16 @@ void PlayState::deleteReward(Reward* r) {
 		reward->setIndvector(--it);
 	}
 	delete r;
+}
+
+void PlayState::ganaVida() {
+	vidas++;
+	cout << "Vidas: " << vidas << endl;
+}
+
+void PlayState::pierdeVida() {
+	vidas--;
+	cout << "Vidas: " << vidas << endl;
 }
 
 void PlayState::saveGame() {
@@ -167,9 +174,4 @@ void PlayState::saveGame() {
 
 string PlayState::getNivelActual() {
 	return niveles[nivelActual];
-}
-
-void PlayState::pierdeVida() {
-	vidas--;
-	cout << "Vidas: " << vidas << endl;
 }

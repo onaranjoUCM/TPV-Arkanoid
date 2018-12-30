@@ -12,6 +12,7 @@ GameStateMachine::~GameStateMachine() {
 	}
 }
 
+// Actualiza la variable del estado actual
 void GameStateMachine::updateCurrentState() {
 	if (!stack.empty())
 	{
@@ -23,12 +24,14 @@ GameState* GameStateMachine::getCurrentState() {
 	return currentState;
 }
 
+// Añade un estado a la pila
 void GameStateMachine::pushState(GameState *pState)
 {
 	stack.push(pState);
 	updateCurrentState();
 }
 
+// Elimina el estado actual de la pila
 void GameStateMachine::popState()
 {
 	if (!stack.empty())
@@ -39,6 +42,7 @@ void GameStateMachine::popState()
 	}
 }
 
+// Elimina el estado actual y añade uno nuevo
 void GameStateMachine::changeState(GameState *pState)
 {
 	popState();

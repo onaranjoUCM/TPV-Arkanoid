@@ -28,7 +28,6 @@ bool MenuButton::handleEvent(SDL_Event& e){
 			cb(app);
 			handled = true;
 		}
-		//return handled;
 	}
 	return handled;
 }

@@ -21,6 +21,7 @@ void Paddle::update() {
 	}
 }
 
+// Determina la dirección en la que debe rebotar la pelota dependiendo de dónde impacte en la pala
 Vector2D Paddle::ballCollisionVector(const SDL_Rect* ballRect) {
 	Vector2D collVector;
 	int ballCenter = ballRect->x + (ballRect->w / 2);
@@ -87,6 +88,7 @@ bool Paddle::handleEvent(SDL_Event& e) {
 	return handled;
 }
 
+// Devuelve si un objeto ha entrado en contacto con él y en qué dirección debe rebotar
 bool Paddle::collides(const SDL_Rect* rect, Vector2D& collVector) {
 	if (SDL_HasIntersection(rect, &getRect())) {
 		collVector = ballCollisionVector(rect);

@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// Devuelve si un objeto ha entrado en contacto con él y en qué dirección debe rebotar
 bool Wall::collides(const SDL_Rect* rect, Vector2D& collVector) {
 	if (SDL_HasIntersection(rect, &getRect())) {
 		if (wallPosition == "left") { collVector = Vector2D(1, 0); }

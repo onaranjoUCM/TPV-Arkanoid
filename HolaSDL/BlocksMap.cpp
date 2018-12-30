@@ -97,6 +97,7 @@ void BlocksMap::saveToFile(ofstream& outfile) {
 	outfile << endl;
 }
 
+// Devuelve si un objeto ha entrado en contacto con él y en qué dirección debe rebotar
 bool BlocksMap::checkCollision(const SDL_Rect* rect, const Vector2D* vel, Vector2D& collVector, PlayState* playState) {
 	if (SDL_HasIntersection(rect, &getRect())) {
 		Block* block = collides(rect, vel, collVector);
@@ -172,7 +173,7 @@ Block* BlocksMap::collides(const SDL_Rect* ballRect, const Vector2D* ballVel, Ve
 	return b;
 }
 
-// Devuelve el bloque que se encuentra en una posición determinada
+// Devuelve el bloque que se encuentra en una posición determinada (PENDIENTE DE MEJORA)
 Block* BlocksMap::blockAt(const Vector2D& p) {
 	/*
 	int r = p.getY() / (getH() / rows) - 2;
@@ -182,7 +183,7 @@ Block* BlocksMap::blockAt(const Vector2D& p) {
 		return cells[r][c];
 	}
 	*/
-	// PENDIENTE DE MEJORA
+	
 	for (int r = 0; r < rows; r++) {
 		for (int c = 0; c < cols; c++) {
 			if (cells[r][c] != nullptr) {
@@ -212,6 +213,7 @@ int BlocksMap::getNumBlocks() {
 	return numBlocks;
 }
 
+// Función auxiliar del destructor
 void BlocksMap::limpiar() {
 	if (cells != nullptr) {
 		for (int r = 0; r < rows; r++) {
